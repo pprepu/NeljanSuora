@@ -1,5 +1,5 @@
 # README
-Tässä *tiedostossa* paljon erittäin **hyödyllistä** tietoa.
+Tässä *tiedostossa* paljon *erittäin* **hyödyllistä** tietoa.
 
 ## Tehtävät
 
