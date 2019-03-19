@@ -1,0 +1,103 @@
+commit 1760e51c6a45ffbf269775479aec3241a1ac59ee
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 21:18:29 2019 +0200
+
+    poistettu file1, file2 --> file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3f3e9fb54c41027b1287c05b23596158632f1cf5
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 21:15:40 2019 +0200
+
+    kolme filee
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit e842c3b35b020d2110e6a7ade656297a6d65b7bf
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 21:08:16 2019 +0200
+
+    muutoksia molempiin tiedostoihin
+
+ eka.txt    | 3 ++-
+ kolmas.txt | 1 +
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+commit 88acfd0fe67987c088e10fa7f33d8688646bb856
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 21:02:57 2019 +0200
+
+    tiedosto.txt on nyt eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7d779c5e95ec3e3d09e3765fa48fe47f7e07b821
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 21:01:53 2019 +0200
+
+    poistettu toinen.txt
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4eaf987583f86a06958de2ccf71fc43c47151008
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 21:00:33 2019 +0200
+
+    poistettu tekstiä
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit efbed4c9293d60140a897625c6180ca6f5135ca7
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 20:57:07 2019 +0200
+
+    muutoksia tiedosto.txt
+
+ tiedosto.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 207b9ee788dce43fbf434799fd4fcfe64656652f
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 20:45:23 2019 +0200
+
+    stuff -kansio yms.
+
+ stuff/uus.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 36b6ecd56406cc3d3b520fc6e7ca4c66d333567e
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 20:43:51 2019 +0200
+
+    kolmas.txt lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 519fb8f5688d773ebfc77fad3b1c90649d2d8f01
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 19:30:53 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit c1562356f0fb7ace7eda20c5d3a8c4bed290a7c0
+Author: pekkap <pekka.prepula@gmail.com>
+Date:   Tue Mar 19 19:25:05 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
