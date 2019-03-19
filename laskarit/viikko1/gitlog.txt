@@ -1,5 +1,5 @@
 commit 1760e51c6a45ffbf269775479aec3241a1ac59ee
-Author: pekkap <pekka.prepula@gmail.com>
+Author: **pekkap** <pekka.prepula@gmail.com>
 Date:   Tue Mar 19 21:18:29 2019 +0200
 
     poistettu file1, file2 --> file22
@@ -51,7 +51,7 @@ commit 4eaf987583f86a06958de2ccf71fc43c47151008
 Author: pekkap <pekka.prepula@gmail.com>
 Date:   Tue Mar 19 21:00:33 2019 +0200
 
-    poistettu teksti‰
+    poistettu teksti√§
 
  tiedosto.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
@@ -78,7 +78,7 @@ commit 36b6ecd56406cc3d3b520fc6e7ca4c66d333567e
 Author: pekkap <pekka.prepula@gmail.com>
 Date:   Tue Mar 19 20:43:51 2019 +0200
 
-    kolmas.txt lis‰tty
+    kolmas.txt lis√§tty
 
  kolmas.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
@@ -87,7 +87,7 @@ commit 519fb8f5688d773ebfc77fad3b1c90649d2d8f01
 Author: pekkap <pekka.prepula@gmail.com>
 Date:   Tue Mar 19 19:30:53 2019 +0200
 
-    muutos ja lis‰ys
+    muutos ja lis√§ys
 
  tiedosto.txt | 1 +
  toinen.txt   | 0
