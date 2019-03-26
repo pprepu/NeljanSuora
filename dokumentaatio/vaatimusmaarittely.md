@@ -30,3 +30,4 @@ Ajan riittäessä perusversiota laajennetaan esim. seuraavilla toiminnallisuksil
 * käyttäjätunnuksen ja siihen liittyvän pelihistorian poisto
 * salasanan lisääminen kirjautumiseen
 * pelimuodon sääntöjen muuttaminen, esim. rivien tai sarakkeiden lisääminen *(perusversiossa 7 saraketta ja 6 riviä)* ja/tai tarvittavien peräkkäisten kiekkojen määrän muuttaminen
+* pelaaminen toista käyttäjää vastaan
