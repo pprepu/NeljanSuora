@@ -7,3 +7,7 @@ Tässä tiedostossa paljon *erittäin* **hyödyllistä** tietoa.
 [gitlog.txt](https://github.com/pprepu/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
 [komentorivi.txt](https://github.com/pprepu/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+
+## Dokumentaatio
+
+[Työaikakirjanpito]((https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
