@@ -11,3 +11,5 @@ Tässä tiedostossa paljon *erittäin* **hyödyllistä** tietoa.
 ## Dokumentaatio
 
 [Työaikakirjanpito](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+
+[Vaatimusmäärittely](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
