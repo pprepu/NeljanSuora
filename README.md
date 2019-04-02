@@ -1,15 +1,21 @@
-# README
-Tässä tiedostossa paljon *erittäin* **hyödyllistä** tietoa.
+# Neljän suora -peli
 
-## Tehtävät
+Sovelluksella on mahdollista pelata [neljän suora](https://fi.wikipedia.org/wiki/Nelj%C3%A4n_suora) -peliä, jossa on tarkoituksena laittaa neljä omaa kiekkoa pelialueelle vierekkäin samalla estäen vastustajaa tekemästä samaa. Lisäksi sovellukseen voi luoda oman käyttäjätunnuksen, jonka perusteella vanhojen pelien tuloksia tilastoidaan.
 
-### Viikko 1
-[gitlog.txt](https://github.com/pprepu/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/pprepu/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 ## Dokumentaatio
 
 [Työaikakirjanpito](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 [Vaatimusmäärittely](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+
+## Komentorivitoiminnot
+
+### Testaus
+
+Testit suoritetaan komennolla
+> mvn test
+
+Testikattavuusraportti luodaan komennolla
+> mvn test jacoco report
+
