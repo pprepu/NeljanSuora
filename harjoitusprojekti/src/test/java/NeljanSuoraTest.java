@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import java.util.Collection;
 import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -13,7 +14,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import neljansuora.controller.Usercontrol;
 import neljansuora.domain.User;
-import neljansuora.controller.Usercontrol;
+import neljansuora.controller.Gamecontrol;
 
 /**
  *
@@ -88,4 +89,39 @@ public class NeljanSuoraTest {
         control.addUser("Teppo");
         assertEquals(true, control.userExists("Teppo"));
     }
+    
+    @Test
+    public void userConstructorDefinesStartingLossesCorrectly() {
+        assertEquals(0, defaultUser.getLosses());
+    }
+    
+    @Test
+    public void userConstructorDefinesStartingWinsCorrectly() {
+        assertEquals(0, defaultUser.getWins());
+    }
+    
+    @Test
+    public void userControlGetUsersReturnsACollectionWithAllUsers() {
+        control.addUser(defaultUser);
+        control.addUser("Teppo");
+        control.addUser("PeliMarkku");
+        
+        assertEquals(3, control.getUsers().size());
+    }
+    
+    @Test 
+    public void userCountWorksProperly() {
+        control.addUser(defaultUser);
+        control.addUser("Teppo");
+        
+        assertEquals(2, control.userCount());
+    }
+    
+    @Test
+    public void getUserReturnsNullWhenUserDoesNotExist() {
+        
+        assertEquals(null, control.getUser("Karri"));
+    }
+    
+    
 }

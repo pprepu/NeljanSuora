@@ -1,7 +1,7 @@
 
 package neljansuora.ui;
 
-import NeljanSuora.controller.Gamecontrol;
+import neljansuora.controller.Gamecontrol;
 import neljansuora.domain.User;
 import neljansuora.controller.Usercontrol;
 import java.util.Collection;
@@ -112,7 +112,7 @@ public class NeljanSuoraUi extends Application {
         });
         
         continueButton.setOnAction((event) -> {
-            if (loginFailureText.getText().equals("Login successful")) window.setScene(getMainPage());
+            if (loginFailureText.getText().equals("Login successful")) window.setScene(getGamePage());
         });
         
         
@@ -129,7 +129,7 @@ public class NeljanSuoraUi extends Application {
         
     }
     
-    public Scene getMainPage() {
+    public Scene getGamePage() {
         //create main layout
         BorderPane layout = new BorderPane();
         layout.setPrefSize(650, 500);
@@ -138,7 +138,7 @@ public class NeljanSuoraUi extends Application {
         Label turnLabel = new Label("Turn: " + playerTurn);
         turnLabel.setFont(Font.font("Monospaced", 40));
         turnLabel.setStyle("-fx-border-style: solid inside;");
-
+        
         GridPane gameTiles = new GridPane();
         for (int i = 0; i < 6; i++) {
             for (int y = 0; y < 7; y++) {

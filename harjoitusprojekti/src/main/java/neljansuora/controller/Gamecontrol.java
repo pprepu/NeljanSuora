@@ -1,11 +1,12 @@
 
-package NeljanSuora.controller;
+package neljansuora.controller;
 import javafx.scene.control.Label;
 
 public class Gamecontrol {
     
     public int getPlayableTile(Label[][] gameArea, int index) {
         
+        //checking playable tile from the bottom
         for (int i = 5; i >= 0; i--) {
             if (gameArea[index][i].getText().equals(" ")) {
                 return i;
@@ -19,6 +20,14 @@ public class Gamecontrol {
             return true;
         }
         if (checkColumns(gameArea)) { 
+            return true;
+        }
+        
+        if (checkDiagonallyLeftToRight(gameArea)) {
+            return true;
+        }
+        
+        if (checkDiagonallyRightToLeft(gameArea)) {
             return true;
         }
         
@@ -50,6 +59,58 @@ public class Gamecontrol {
             }
             currentCol = "";
         }
+        return false;
+    }
+    
+    private boolean checkDiagonallyLeftToRight(Label[][] gameArea) {
+        String currentDiag = "";
+        int sarake = 0;
+        for (int lahtorivi = 0; lahtorivi < 3; lahtorivi++) {
+            for (int lahtosarake = 0; lahtosarake < 4; lahtosarake++) {
+                sarake = lahtosarake;
+                for (int rivi = lahtorivi; rivi < gameArea[0].length; rivi++) {
+                    if (sarake >= gameArea.length) {
+                        // out of bounds, do nothing
+                    } else {
+                    currentDiag += gameArea[sarake][rivi].getText();
+                    sarake++;
+                    }
+                }
+
+                if (currentDiag.contains("XXXX") || currentDiag.contains("OOOO")) {
+                        return true;
+                }
+
+                currentDiag = "";
+            }
+        }
+   
+        return false;
+    }
+    
+    private boolean checkDiagonallyRightToLeft(Label[][] gameArea) {
+        String currentDiag = "";
+        int sarake = 0;
+        for (int lahtorivi = 0; lahtorivi < 3; lahtorivi++) {
+            for (int lahtosarake = gameArea.length - 1; lahtosarake >= 3; lahtosarake--) {
+                sarake = lahtosarake;
+                for (int rivi = lahtorivi; rivi < gameArea[0].length; rivi++) {
+                    if (sarake < 0) {
+                        // out of bounds, do nothing
+                    } else {
+                    currentDiag += gameArea[sarake][rivi].getText();
+                    sarake--;
+                    }
+                }
+
+                if (currentDiag.contains("XXXX") || currentDiag.contains("OOOO")) {
+                        return true;
+                }
+
+                currentDiag = "";
+            }
+        }
+   
         return false;
     }
 

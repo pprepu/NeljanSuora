@@ -40,6 +40,8 @@ public class Usercontrol {
         return false;
     }
     
+    //add addUser(Collection collection) -method for future db needs
+    
     public boolean userExists(String name) {
         String editedName = name.trim().toUpperCase();
         for (String username: this.users.keySet()) {
