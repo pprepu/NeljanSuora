@@ -9,6 +9,8 @@ Sovelluksella on mahdollista pelata [neljän suora](https://fi.wikipedia.org/wik
 
 [Vaatimusmäärittely](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
+[Arkkitehtuuri](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## Komentorivitoiminnot
 
 ### Testaus
