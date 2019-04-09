@@ -23,11 +23,11 @@ public class Gamecontrol {
             return true;
         }
         
-        if (checkDiagonallyLeftToRight(gameArea)) {
+        if (checkDiagonallyLToR(gameArea)) {
             return true;
         }
         
-        if (checkDiagonallyRightToLeft(gameArea)) {
+        if (checkDiagonallyRToL(gameArea)) {
             return true;
         }
         
@@ -62,23 +62,21 @@ public class Gamecontrol {
         return false;
     }
     
-    private boolean checkDiagonallyLeftToRight(Label[][] gameArea) {
+    private boolean checkDiagonallyLToR(Label[][] gameArea) {
         String currentDiag = "";
         int sarake = 0;
         for (int lahtorivi = 0; lahtorivi < 3; lahtorivi++) {
             for (int lahtosarake = 0; lahtosarake < 4; lahtosarake++) {
                 sarake = lahtosarake;
                 for (int rivi = lahtorivi; rivi < gameArea[0].length; rivi++) {
-                    if (sarake >= gameArea.length) {
-                        // out of bounds, do nothing
-                    } else {
-                    currentDiag += gameArea[sarake][rivi].getText();
-                    sarake++;
+                    if (sarake < gameArea.length) {
+                        currentDiag += gameArea[sarake][rivi].getText();
+                        sarake++;
                     }
                 }
 
                 if (currentDiag.contains("XXXX") || currentDiag.contains("OOOO")) {
-                        return true;
+                    return true;
                 }
 
                 currentDiag = "";
@@ -88,23 +86,21 @@ public class Gamecontrol {
         return false;
     }
     
-    private boolean checkDiagonallyRightToLeft(Label[][] gameArea) {
+    private boolean checkDiagonallyRToL(Label[][] gameArea) {
         String currentDiag = "";
         int sarake = 0;
         for (int lahtorivi = 0; lahtorivi < 3; lahtorivi++) {
             for (int lahtosarake = gameArea.length - 1; lahtosarake >= 3; lahtosarake--) {
                 sarake = lahtosarake;
                 for (int rivi = lahtorivi; rivi < gameArea[0].length; rivi++) {
-                    if (sarake < 0) {
-                        // out of bounds, do nothing
-                    } else {
-                    currentDiag += gameArea[sarake][rivi].getText();
-                    sarake--;
+                    if (sarake >= 0) {
+                        currentDiag += gameArea[sarake][rivi].getText();
+                        sarake--;
                     }
                 }
 
                 if (currentDiag.contains("XXXX") || currentDiag.contains("OOOO")) {
-                        return true;
+                    return true;
                 }
 
                 currentDiag = "";
