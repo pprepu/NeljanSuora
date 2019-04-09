@@ -1,6 +1,6 @@
 
-package NeljanSuora.logic;
-import NeljanSuora.domain.User;
+package neljansuora.controller;
+import neljansuora.domain.User;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Collection;

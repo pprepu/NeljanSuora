@@ -11,9 +11,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import NeljanSuora.logic.Usercontrol;
-import NeljanSuora.domain.User;
-import NeljanSuora.logic.Usercontrol;
+import neljansuora.controller.Usercontrol;
+import neljansuora.domain.User;
+import neljansuora.controller.Usercontrol;
 
 /**
  *
@@ -37,8 +37,8 @@ public class NeljanSuoraTest {
     }
 
     @Test
-    public void toStringinUserIsWorkingProperly() {
-        assertEquals("Petteri", defaultUser.toString());
+    public void toStringInUserIsWorkingProperly() {
+        assertEquals("Petteri;0;0", defaultUser.toString());
     }
     
     @Test
