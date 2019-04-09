@@ -1,5 +1,5 @@
 
-package NeljanSuora;
+package NeljanSuora.ui;
 
 import NeljanSuora.domain.User;
 import NeljanSuora.logic.Usercontrol;
@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 
-public class NeljanSuora extends Application {
+public class NeljanSuoraUi extends Application {
     
     private Usercontrol control;
     private User currentUser;
@@ -110,7 +110,7 @@ public class NeljanSuora extends Application {
     }
     
     public static void main(String[] args) {
-        launch(NeljanSuora.class);
+        launch(NeljanSuoraUi.class);
         
     }
     
