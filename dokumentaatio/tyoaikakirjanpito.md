@@ -8,6 +8,7 @@ päivä | aika | mitä tein
 2.4 | 4 | Sisäänkirjautumisen ohjelmointia graafisessa käyttöliittymässä
 5.4 | 4 | Pelin koodaamista toimivaksi, pelialueen luominen, syötteen lisääminen sinne ja pelin loppumisen tarkastaminen
 9.4 | 3 | Pakkausrakenteen uudelleen muodostaminen ja arkkitehtuurikaavion piirtäminen
-9.4 | 1 | uusien testien luominen
-yht | 17|
+9.4 | 1 | Uusien testien luominen
+9.4 | 3 | Pelin ohjelmointia täysin sääntöjen mukaiseksi
+yht | 20|
 
