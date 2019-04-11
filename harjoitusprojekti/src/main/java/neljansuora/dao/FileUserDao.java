@@ -20,7 +20,6 @@ public class FileUserDao implements UserDao {
     public FileUserDao(String filename) {
         this.users = new HashMap<>();
         this.filename = filename;
-        readFromFile();
     }
     
     public boolean addUser(String username) {
@@ -89,14 +88,17 @@ public class FileUserDao implements UserDao {
         }
     }
     
-    public void saveToFile() throws Exception {
-        PrintWriter writer = new PrintWriter(this.filename);
+    public void saveToFile() {
+        try (PrintWriter writer = new PrintWriter(this.filename)) {
         
-        for (User user: getUsers()) {
-            writer.println(user);
+            for (User user: getUsers()) {
+                writer.println(user);
+            }
+
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
-        
-        writer.close();
     }
     
     public int userCount() {
@@ -119,7 +121,9 @@ public class FileUserDao implements UserDao {
     
     @Override
     public void changeUserState(User user) {
-        
+        if (userExists(user.getName())) {
+            this.users.put(modifyName(user.getName()), user);
+        }
     }
     
 

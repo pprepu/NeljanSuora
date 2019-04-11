@@ -46,6 +46,7 @@ public class NeljanSuoraUi extends Application {
         
         this.userControl = new Usercontrol();
         this.fileUserDao = new FileUserDao(userFile);
+        this.fileUserDao.readFromFile();
         
         this.controller = new Gamecontrol();
         this.gameArea = new Label[7][6]; // turned horisontally
@@ -120,6 +121,7 @@ public class NeljanSuoraUi extends Application {
                 this.fileUserDao.addUser(new User(loginField.getText(), 0, 0));
                 createUserFailureText.setText("User created");
                 loginFailureText.setText("");
+                fileUserDao.saveToFile();
             }
         });
         
@@ -147,7 +149,7 @@ public class NeljanSuoraUi extends Application {
         layout.setPrefSize(650, 500);
         //create its components
         
-        Label turnLabel = new Label("Turn: " + playerTurn);
+        Label turnLabel = new Label("Turn: " + playerTurn + " (" + userControl.getCurrentUser().getName() + ")");
         turnLabel.setFont(Font.font("Monospaced", 40));
         turnLabel.setStyle("-fx-border-style: solid inside;");
         
@@ -169,6 +171,10 @@ public class NeljanSuoraUi extends Application {
             gameTiles.add(currentButton, i, 6);
         }
         
+        Button resetButton = new Button("Reset");
+        Label playerInfo = new Label("Name: " + userControl.getCurrentUser().getName()
+        + ", wins: " + userControl.getCurrentUser().getWins() + ", losses: " + 
+                userControl.getCurrentUser().getLosses());
         //functionality to buttons
         
         for (int i = 0; i < 7; i++) {
@@ -180,24 +186,43 @@ public class NeljanSuoraUi extends Application {
                     
                     if (this.playerTurn.equals("X")) {
                         this.playerTurn = "O";
+                        turnLabel.setText("Turn: " + playerTurn);
                     } else {
                         this.playerTurn = "X";
+                        turnLabel.setText("Turn: " + playerTurn + " (" + userControl.getCurrentUser().getName() + ")");
                     }
                     
-                    turnLabel.setText("Turn: " + playerTurn);
                     
                     if (controller.gameIsOver(this.gameArea)) {
                         this.gameOver = true;
                         turnLabel.setText("GAME OVER");
+                        // adding win/loss to user
+                        if (this.playerTurn.equals("O")) {
+                            this.userControl.win();
+                        } else {
+                            this.userControl.lose();
+                        }
+                        System.out.println(userControl.getCurrentUser());
+                        fileUserDao.changeUserState(userControl.getCurrentUser());
+                        fileUserDao.saveToFile();
+                        
+                        playerInfo.setText("Name: " + userControl.getCurrentUser().getName()
+        + ", wins: " + userControl.getCurrentUser().getWins() + ", losses: " + 
+                userControl.getCurrentUser().getLosses());
                     }
                 }
             });
         }
-        
-        
+        /*
+        resetButton.setOnAction((event) -> {
+            Stage peliStage = new Stage();
+            peliStage.setScene(getGamePage());
+        });
+        */
         //components added to main layout
         layout.setTop(turnLabel);
         layout.setCenter(gameTiles);
+        layout.setBottom(playerInfo);
         this.fileUserDao.getUsers().stream().forEach(e -> System.out.println(e));
         System.out.println("Current user: " + this.userControl.getCurrentUser());
         

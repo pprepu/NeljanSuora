@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
 import neljansuora.controller.Usercontrol;
 import neljansuora.domain.User;
 import neljansuora.controller.Gamecontrol;
+import neljansuora.dao.FileUserDao;
 
 /**
  *
@@ -24,11 +25,13 @@ public class NeljanSuoraTest {
     
     User defaultUser;
     Usercontrol control;
+    FileUserDao fileUserDao;
     
     @Before
     public void setUp() {
         defaultUser = new User("Petteri");
-        control = new Usercontrol(new HashMap<>());
+        control = new Usercontrol();
+        fileUserDao = new FileUserDao("testusers.txt");
     }
     
     
@@ -42,52 +45,46 @@ public class NeljanSuoraTest {
         assertEquals("Petteri;0;0", defaultUser.toString());
     }
     
-    @Test
-    public void getNameModifiedinUserIsWorkingProperly() {
-        User testUser = new User("tapIO   ");
-        
-        assertEquals("TAPIO", testUser.getNameModified());
-    }
     
     @Test
     public void addingUserReturnsTrueWhenNameIsNotTaken() {
-        boolean added = control.addUser("Teppo");
+        boolean added = fileUserDao.addUser("Teppo");
         
         assertEquals(true, added);
     }
     
     @Test
     public void addingUserReturnsFalseWhenNameIsTaken() {
-        control.addUser("Teppo");
-        boolean added = control.addUser("Teppo");
+        fileUserDao.addUser("Teppo");
+        boolean added = fileUserDao.addUser("Teppo");
         
         assertEquals(false, added);
     }
     
     @Test
     public void addUserReturnsTrueWhenUsingUserParameterAndUserHasNotBeenAdded() {
-        boolean added = control.addUser(defaultUser);
+        boolean added = fileUserDao.addUser(defaultUser);
         
         assertEquals(true, added);
     }
     
     @Test
     public void addUserReturnsFalseWhenUsingUserParameterAndUserHasBeenAdded() {
-        control.addUser(defaultUser);
-        boolean added = control.addUser(defaultUser);
+        fileUserDao.addUser(defaultUser);
+        boolean added = fileUserDao.addUser(defaultUser);
         
         assertEquals(false, added);
     }
     
     @Test
     public void userExistsReturnsFalseWhenUserHasNotBeenAdded() {
-        assertEquals(false, control.userExists("test"));
+        assertEquals(false, fileUserDao.userExists("test"));
     }
     
     @Test
     public void userExistsReturnsTrueWhenUserHasBeenAdded() {
-        control.addUser("Teppo");
-        assertEquals(true, control.userExists("Teppo"));
+        fileUserDao.addUser("Teppo");
+        assertEquals(true, fileUserDao.userExists("Teppo"));
     }
     
     @Test
@@ -102,26 +99,71 @@ public class NeljanSuoraTest {
     
     @Test
     public void userControlGetUsersReturnsACollectionWithAllUsers() {
-        control.addUser(defaultUser);
-        control.addUser("Teppo");
-        control.addUser("PeliMarkku");
+        fileUserDao.addUser(defaultUser);
+        fileUserDao.addUser("Teppo");
+        fileUserDao.addUser("PeliMarkku");
         
-        assertEquals(3, control.getUsers().size());
+        assertEquals(3, fileUserDao.getUsers().size());
     }
     
     @Test 
     public void userCountWorksProperly() {
-        control.addUser(defaultUser);
-        control.addUser("Teppo");
+        fileUserDao.addUser(defaultUser);
+        fileUserDao.addUser("Teppo");
         
-        assertEquals(2, control.userCount());
+        assertEquals(2, fileUserDao.userCount());
     }
     
     @Test
     public void getUserReturnsNullWhenUserDoesNotExist() {
         
-        assertEquals(null, control.getUser("Karri"));
+        assertEquals(null, fileUserDao.getUser("Karri"));
     }
     
+    @Test
+    public void readFromFileWorksProperly() {
+        fileUserDao.readFromFile();
+        
+        assertEquals(2, fileUserDao.userCount());
+    }
     
+    @Test
+    public void currentUserIsNullAtFirst() {
+        assertEquals(null, this.control.getCurrentUser());
+    }
+    
+    @Test
+    public void loginChangesCurrentUser() {
+        control.logIn(new User("Jani"));
+        assertEquals("Jani", control.getCurrentUser().getName());
+    }
+    
+    @Test 
+        public void getCurrentUserWorksProperly() {
+        control.logIn(new User("Jani"));
+        assertEquals("Jani;0;0", control.getCurrentUser().toString());
+    }
+    
+    @Test
+    public void logoutChangesCurrentUserToNull() {
+        control.logIn(new User("Jani"));
+        control.logOut();
+        assertEquals(null, this.control.getCurrentUser());
+    }
+    
+    @Test
+    public void addWinsAddsAWin() {
+        control.logIn(new User("Jani"));
+        control.win();
+        control.win();
+        assertEquals(2, control.getCurrentUser().getWins());
+    }
+    
+    @Test
+    public void addLossAddsALoss() {
+        control.logIn(new User("Jani"));
+        control.lose();
+        control.lose();
+        assertEquals(2, control.getCurrentUser().getLosses());
+    }
 }
