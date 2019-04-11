@@ -1,4 +1,3 @@
-
 package neljansuora.ui;
 
 import java.io.FileInputStream;
@@ -126,7 +125,7 @@ public class NeljanSuoraUi extends Application {
         });
         
         continueButton.setOnAction((event) -> {
-            if (loginFailureText.getText().equals("Login successful")) window.setScene(getGamePage());
+            if (loginFailureText.getText().equals("Login successful")) mainLayout.setCenter(getGamePage());
         });
         
         
@@ -135,6 +134,7 @@ public class NeljanSuoraUi extends Application {
         window.setScene(mainView);
         window.setTitle("Test mode, basic login page and a single game");
         window.show();
+        window.centerOnScreen();
         
     }
     
@@ -143,10 +143,10 @@ public class NeljanSuoraUi extends Application {
         
     }
     
-    public Scene getGamePage() {
+    public Parent getGamePage() {
         //create main layout
         BorderPane layout = new BorderPane();
-        layout.setPrefSize(650, 500);
+        //layout.setPrefSize(650, 500);
         //create its components
         
         Label turnLabel = new Label("Turn: " + playerTurn + " (" + userControl.getCurrentUser().getName() + ")");
@@ -226,10 +226,11 @@ public class NeljanSuoraUi extends Application {
         this.fileUserDao.getUsers().stream().forEach(e -> System.out.println(e));
         System.out.println("Current user: " + this.userControl.getCurrentUser());
         
+        return layout;
         //create the returnable scene
-        Scene view = new Scene(layout);
+        //Scene view = new Scene(layout);
         
-        return view;
+        //return view;
         
     }
     

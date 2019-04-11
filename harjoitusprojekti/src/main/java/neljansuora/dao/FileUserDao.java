@@ -59,8 +59,6 @@ public class FileUserDao implements UserDao {
         return false;
     }
     
-    //add addUser(Collection collection) -method for future db needs
-    
     @Override
     public boolean userExists(String name) {
         String editedName = modifyName(name);
