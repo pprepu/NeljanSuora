@@ -148,6 +148,13 @@ public class NeljanSuoraUi extends Application {
         
     }
     
+    @Override
+    public void stop(){
+        //make an if-statement for checking right state of app -->
+       //this.fileUserDao.saveToFile();
+       System.out.println("Saving current stats");
+}
+    
     public static void main(String[] args) {
         launch(NeljanSuoraUi.class);
         
