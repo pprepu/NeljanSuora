@@ -151,7 +151,7 @@ public class NeljanSuoraUi extends Application {
     @Override
     public void stop(){
         //make an if-statement for checking right state of app -->
-       //this.fileUserDao.saveToFile();
+       this.fileUserDao.saveToFile();
        System.out.println("Saving current stats");
 }
     
@@ -240,15 +240,10 @@ public class NeljanSuoraUi extends Application {
         layout.setTop(turnLabel);
         layout.setCenter(gameTiles);
         layout.setBottom(playerInfo);
-        this.fileUserDao.getUsers().stream().forEach(e -> System.out.println(e));
-        System.out.println("Current user: " + this.userControl.getCurrentUser());
+        //this.fileUserDao.getUsers().stream().forEach(e -> System.out.println(e));
+        //System.out.println("Current user: " + this.userControl.getCurrentUser());
         
         return layout;
-        //create the returnable scene
-        //Scene view = new Scene(layout);
-        
-        //return view;
-        
     }
     
     public void playTile(int posCol, int posRow) {

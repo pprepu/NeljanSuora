@@ -22,11 +22,15 @@ public class Usercontrol {
     
     
     public void logIn(User user) {
-        this.currentUser = user;
+        setCurrentUser(user);
     }
     
     public void logOut() {
         this.currentUser = null;
+    }
+    
+    public void setCurrentUser(User user) {
+        this.currentUser = user;
     }
     
     public User getCurrentUser() {
