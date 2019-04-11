@@ -13,6 +13,13 @@ Sovelluksella on mahdollista pelata [neljän suora](https://fi.wikipedia.org/wik
 
 ## Komentorivitoiminnot
 
+### Suoritettavan .jarin generointi
+
+Komento
+> mvn package
+
+luo *target* hakemistoon suoritettavan jar-tiedoston harjoitusprojekti-1.0-SNAPSHOT.jar
+
 ### Testaus
 
 Testit suoritetaan komennolla
@@ -20,6 +27,8 @@ Testit suoritetaan komennolla
 
 Testikattavuusraportti luodaan komennolla
 > mvn test jacoco report
+
+Kattavuusraportti löytyy tiedostosta *target/site/jacoco/index.html*
 
 ### Checkstyle
 
