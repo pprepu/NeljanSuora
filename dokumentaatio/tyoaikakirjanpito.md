@@ -10,5 +10,8 @@ päivä | aika | mitä tein
 9.4 | 3 | Pakkausrakenteen uudelleen muodostaminen ja arkkitehtuurikaavion piirtäminen
 9.4 | 1 | Uusien testien luominen
 9.4 | 3 | Pelin ohjelmointia täysin sääntöjen mukaiseksi
-yht | 20|
+10.4| 3 | Datan tallentamisvaihtoehtojen tutkimista ja harjoittelua
+11.4| 2 | Datan tallentamisjärjestelmän luominen
+11.4| 4 | Ohjelman rakenteen muokkaamista
+yht | 29|
 
