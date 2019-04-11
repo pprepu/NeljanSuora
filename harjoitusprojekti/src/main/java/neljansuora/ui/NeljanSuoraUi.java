@@ -79,6 +79,7 @@ public class NeljanSuoraUi extends Application {
         Label createUserFailureText = new Label("");
         
         Button continueButton = new Button("Continue");
+        Button resetButton = new Button("ResetGame");
         
         // add elements to layout
         loginLayout.add(loginText, 0, 0);
@@ -97,6 +98,7 @@ public class NeljanSuoraUi extends Application {
         
         //add login layout to main layout
         mainLayout.setCenter(loginLayout);
+        
         // add functionality to buttons
         
         
@@ -125,14 +127,22 @@ public class NeljanSuoraUi extends Application {
         });
         
         continueButton.setOnAction((event) -> {
-            if (loginFailureText.getText().equals("Login successful")) mainLayout.setCenter(getGamePage());
+            if (loginFailureText.getText().equals("Login successful")) { 
+                mainLayout.setCenter(getGamePage());
+                mainLayout.setBottom(resetButton);
+            }
         });
         
+        resetButton.setOnAction((event) -> {
+            this.gameOver = false;
+            this.playerTurn = "X";
+            mainLayout.setCenter(getGamePage());
+        });
         
         Scene mainView = new Scene(mainLayout);
         
         window.setScene(mainView);
-        window.setTitle("Test mode, basic login page and a single game");
+        window.setTitle("Test mode, login page and game with stats");
         window.show();
         window.centerOnScreen();
         
