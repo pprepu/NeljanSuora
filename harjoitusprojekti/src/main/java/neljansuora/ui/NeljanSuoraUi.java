@@ -52,7 +52,7 @@ public class NeljanSuoraUi extends Application {
         this.buttons = new Button[7];
         this.playerTurn = "X";
         this.gameOver = false;
-        System.out.println(userFile);
+        //System.out.println(userFile);
     }
     
     @Override
