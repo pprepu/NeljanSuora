@@ -13,16 +13,22 @@ public class User {
         this.wins = 0;
         this.losses = 0;
     }
+    
+    public User(String name, int wins, int losses) {
+        this.name = name;
+        this.wins = wins;
+        this.losses = losses;
+    }
 
     public String getName() {
         return this.name;
     }
-
+/*
     public String getNameModified() {
         String editedName = this.name.trim().toUpperCase();
         return editedName;
     }
-
+*/
     public int getWins() {
         return wins;
     }
@@ -31,7 +37,13 @@ public class User {
         return losses;
     }
         
-        
+    public void addWin() {
+        this.wins++;
+    }
+    
+    public void addLoss() {
+        this.losses++;
+    }
         
 
     @Override

@@ -1,68 +1,44 @@
 
 package neljansuora.controller;
+import java.io.File;
+import java.io.PrintWriter;
 import neljansuora.domain.User;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Scanner;
+import neljansuora.dao.UserDao;
 
 
 public class Usercontrol {
-    // for now, no permanent data is linked to created users
     
-    private HashMap<String, User> users;
+    private User currentUser;
     
-    public Usercontrol(HashMap<String, User> users) {
-        this.users = users;
+    
+    public Usercontrol() {
+        this.currentUser = null;
     }
     
-    public boolean addUser(String username) {
-        String key = username.trim().toUpperCase();
-        
-        if (this.users.get(key) == null) {
-            this.users.put(key, new User(username));
-            return true;
-        }
-        //käyttäjä on jo olemassa, joten palautetaan false
-        return false;
+    
+    public void logIn(User user) {
+        this.currentUser = user;
     }
     
-    public boolean addUser(User user) {
-        //käyttäjien avaimet lisätään muokatussa muodossa
-        String key = user.getNameModified();
-        //tarkistetaan sisältääkö hajautustaulu jo kyseisen käyttäjän
-        //mikäli ei, lisätään uusi käyttäjä ja palautetaan true
-        if (this.users.get(key) == null) {
-            this.users.put(key, user);
-            return true;
-        }
-        //käyttäjä on jo olemassa, joten palautetaan false
-        return false;
+    public void logOut() {
+        this.currentUser = null;
     }
     
-    //add addUser(Collection collection) -method for future db needs
-    
-    public boolean userExists(String name) {
-        String editedName = name.trim().toUpperCase();
-        for (String username: this.users.keySet()) {
-            if (username.equals(editedName)) {
-                return true;
-            }
-        }
-        
-        return false;
+    public User getCurrentUser() {
+        return this.currentUser;
     }
     
-    public int userCount() {
-        return this.users.size();
+    public void win() {
+        getCurrentUser().addWin();
     }
     
-    public User getUser(String name) {
-        return this.users.get(name);
-    }
-    
-    public Collection<User> getUsers() {
-        return this.users.values();
+    public void lose() {
+        getCurrentUser().addLoss();
     }
 
 }

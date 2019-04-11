@@ -1,12 +1,15 @@
 
 package neljansuora.ui;
 
+import java.io.FileInputStream;
 import neljansuora.controller.Gamecontrol;
 import neljansuora.domain.User;
 import neljansuora.controller.Usercontrol;
+import neljansuora.dao.FileUserDao;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -24,9 +27,8 @@ import javafx.scene.text.Font;
 
 public class NeljanSuoraUi extends Application {
     
-    private Usercontrol control;
-    private User currentUser;
-    
+    private Usercontrol userControl;
+    private FileUserDao fileUserDao;
     private Gamecontrol controller;
     private Label[][] gameArea;
     private Button[] buttons;
@@ -35,18 +37,27 @@ public class NeljanSuoraUi extends Application {
     
     @Override
     public void init() throws Exception {
-        HashMap<String, User> users = new HashMap<>();
-        this.control = new Usercontrol(users);
+        
+        Properties properties = new Properties();
+
+        properties.load(new FileInputStream("config.properties"));
+
+        String userFile = properties.getProperty("userFile");
+        
+        this.userControl = new Usercontrol();
+        this.fileUserDao = new FileUserDao(userFile);
         
         this.controller = new Gamecontrol();
         this.gameArea = new Label[7][6]; // turned horisontally
         this.buttons = new Button[7];
         this.playerTurn = "X";
         this.gameOver = false;
+        System.out.println(userFile);
     }
     
     @Override
     public void start(Stage window) throws Exception {
+        
         
         //create the main layout
         BorderPane mainLayout = new BorderPane();
@@ -91,10 +102,10 @@ public class NeljanSuoraUi extends Application {
         
         loginButton.setOnAction((event) -> {
             String loginName = loginField.getText();
-            if (this.control.userExists(loginName)) {
+            if (this.fileUserDao.userExists(loginName)) {
                 loginFailureText.setText("Login successful");
                 createUserFailureText.setText("");
-                this.currentUser = this.control.getUser(loginName);
+                this.userControl.logIn(this.fileUserDao.getUser(loginName));
             } else {
                 loginFailureText.setText("Login failed");
                 createUserFailureText.setText("");
@@ -102,10 +113,11 @@ public class NeljanSuoraUi extends Application {
         });
         
         createUserButton.setOnAction((event) -> {
-            if (this.control.addUser(loginField.getText()) == false || loginField.getText().equals("")) {
+            if (this.fileUserDao.addUser(loginField.getText()) == false || loginField.getText().equals("")) {
                 createUserFailureText.setText("Cannot create user, try another name");
                 loginFailureText.setText("");
             } else {
+                this.fileUserDao.addUser(new User(loginField.getText(), 0, 0));
                 createUserFailureText.setText("User created");
                 loginFailureText.setText("");
             }
@@ -186,6 +198,8 @@ public class NeljanSuoraUi extends Application {
         //components added to main layout
         layout.setTop(turnLabel);
         layout.setCenter(gameTiles);
+        this.fileUserDao.getUsers().stream().forEach(e -> System.out.println(e));
+        System.out.println("Current user: " + this.userControl.getCurrentUser());
         
         //create the returnable scene
         Scene view = new Scene(layout);
