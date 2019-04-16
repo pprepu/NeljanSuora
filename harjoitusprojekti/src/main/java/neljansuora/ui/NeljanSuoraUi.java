@@ -219,7 +219,7 @@ public class NeljanSuoraUi extends Application {
                         } else {
                             this.userControl.lose();
                         }
-                        System.out.println(userControl.getCurrentUser());
+                        //System.out.println(userControl.getCurrentUser());
                         fileUserDao.changeUserState(userControl.getCurrentUser());
                         fileUserDao.saveToFile();
                         
