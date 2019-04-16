@@ -11,6 +11,10 @@ Sovelluksella on mahdollista pelata [neljän suora](https://fi.wikipedia.org/wik
 
 [Arkkitehtuuri](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+## Releaset
+
+[Viikon 5 release](https://github.com/pprepu/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Komentorivitoiminnot
 
 ### Suoritettavan .jarin generointi
