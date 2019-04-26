@@ -15,5 +15,7 @@ päivä | aika | mitä tein
 11.4| 3 | Ohjelman rakenteen muokkaamista
 11.4| 1 | Käyttöliittymän logiikan muokkaamista
 11.4| 2 | Tilastojen näyttäminen pelissä ja peräkkäisten pelien pelaamisen mahdollistaminen
-yht | 31|
+25.4| 3 | Testirakenteen uudelleen muodostaminen ja uusien testien luominen
+26.4| 1 | Layoutin viilausta
+yht | 35|
 
