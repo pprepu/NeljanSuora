@@ -126,7 +126,7 @@ public class FileUserDao implements UserDao {
     }
     
   /**
-    * Saves users to FileUserDao from a file.
+    * Saves users to a file from FileUserDao's list of users.
     */
     
     public void saveToFile() {
