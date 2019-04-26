@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 /**
   * Handles all the UI-related aspects of the program.
@@ -65,7 +66,7 @@ public class NeljanSuoraUi extends Application {
         //create the main layout
         BorderPane mainLayout = new BorderPane();
         //edit it
-        mainLayout.setPrefSize(650, 500);
+        mainLayout.setPrefSize(400, 430);
         
             //create loginView
         // create the layout
@@ -73,13 +74,16 @@ public class NeljanSuoraUi extends Application {
         
         // create its elements
         Label loginText = new Label("Name: ");
+        loginText.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
         TextField loginField = new TextField();
         
         Button loginButton = new Button("Login");
         Button createUserButton = new Button("Create user");
         
         Label loginFailureText = new Label("");
+        loginFailureText.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
         Label createUserFailureText = new Label("");
+        createUserFailureText.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
         
         Button continueButton = new Button("Continue");
         Button resetButton = new Button("ResetGame");
@@ -195,6 +199,7 @@ public class NeljanSuoraUi extends Application {
         Label playerInfo = new Label("Name: " + userControl.getCurrentUser().getName()
         + ", wins: " + userControl.getCurrentUser().getWins() + ", losses: " + 
                 userControl.getCurrentUser().getLosses());
+        playerInfo.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
         //functionality to buttons
         
         for (int i = 0; i < 7; i++) {
