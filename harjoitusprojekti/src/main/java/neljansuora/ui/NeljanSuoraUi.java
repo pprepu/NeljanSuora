@@ -65,7 +65,7 @@ public class NeljanSuoraUi extends Application {
         //create the main layout
         BorderPane mainLayout = new BorderPane();
         //edit it
-        mainLayout.setPrefSize(650, 500);
+        //mainLayout.setPrefSize(650, 500);
         
             //create loginView
         // create the layout
@@ -166,7 +166,7 @@ public class NeljanSuoraUi extends Application {
     public Parent getGamePage() {
         //create main layout
         BorderPane layout = new BorderPane();
-        //layout.setPrefSize(650, 500);
+        layout.setPrefSize(650, 500);
         //create its components
         
         Label turnLabel = new Label("Turn: " + playerTurn + " (" + userControl.getCurrentUser().getName() + ")");
