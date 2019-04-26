@@ -65,7 +65,7 @@ public class NeljanSuoraUi extends Application {
         //create the main layout
         BorderPane mainLayout = new BorderPane();
         //edit it
-        //mainLayout.setPrefSize(650, 500);
+        mainLayout.setPrefSize(650, 500);
         
             //create loginView
         // create the layout
