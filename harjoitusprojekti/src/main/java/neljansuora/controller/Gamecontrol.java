@@ -2,8 +2,20 @@
 package neljansuora.controller;
 import javafx.scene.control.Label;
 
+/**
+* Checks the current state of the game and gives information about valid moves and if the game is already over.
+*/
 public class Gamecontrol {
     
+    
+    /**
+    * Returns the tile that can be played in a given column.
+    * 
+    * @param    gameArea    Current gametiles representing state of the game.
+    * @param    index   Index of the column player has chosen play.
+    * 
+    * @return Index of the tile that is free. If the column is full, returns -1.
+    */
     public int getPlayableTile(Label[][] gameArea, int index) {
         
         //checking playable tile from the bottom
@@ -15,6 +27,13 @@ public class Gamecontrol {
         return -1;
     }
     
+    /**
+    * Checks if the game has been already won and returns that information.
+    * 
+    * @param    gameArea    Current gametiles representing state of the game.
+    * 
+    * @return True if game is indeed over and false, if it still should continue.
+    */
     public boolean gameIsOver(Label[][] gameArea) {
         if (checkRows(gameArea)) { 
             return true;
@@ -34,6 +53,13 @@ public class Gamecontrol {
         return false;
     }
     
+    /**
+    * Checks if one of the players has formed a winning combo in any of the rows.
+    * 
+    * @param    gameArea    Current gametiles representing state of the game.
+    * 
+    * @return True if such combo exists, false if not.
+    */
     private boolean checkRows(Label[][] gameArea) {
         String currentRow = "";
         for (int i = 0; i < 7; i++) {
@@ -48,6 +74,13 @@ public class Gamecontrol {
         return false;
     }
     
+    /**
+    * Checks if one of the players has formed a winning combo in any of the columns.
+    * 
+    * @param    gameArea    Current gametiles representing state of the game.
+    * 
+    * @return True if such combo exists, false if not.
+    */
     private boolean checkColumns(Label[][] gameArea) {
         String currentCol = "";
         for (int i = 0; i < 6; i++) {
@@ -62,6 +95,13 @@ public class Gamecontrol {
         return false;
     }
     
+    /**
+    * Checks if one of the players has formed a winning combo in any diagonal tiles starting from upper left to lower right.
+    * 
+    * @param    gameArea    Current gametiles representing state of the game.
+    * 
+    * @return True if such combo exists, false if not.
+    */
     private boolean checkDiagonallyLToR(Label[][] gameArea) {
         String currentDiag = "";
         int sarake = 0;
@@ -85,6 +125,14 @@ public class Gamecontrol {
    
         return false;
     }
+    
+    /**
+    * Checks if one of the players has formed a winning combo in any diagonal tiles starting from upper right to lower left.
+    * 
+    * @param    gameArea    Current gametiles representing state of the game.
+    * 
+    * @return True if such combo exists, false if not.
+    */
     
     private boolean checkDiagonallyRToL(Label[][] gameArea) {
         String currentDiag = "";

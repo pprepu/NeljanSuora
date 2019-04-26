@@ -24,6 +24,9 @@ import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
 
+/**
+  * Handles all the UI-related aspects of the program.
+  */
 public class NeljanSuoraUi extends Application {
     
     private Usercontrol userControl;

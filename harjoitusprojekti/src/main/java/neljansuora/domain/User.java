@@ -1,7 +1,9 @@
 
 package neljansuora.domain;
 
-
+/**
+* Represents players of the game, whose statistics are saved into a database.
+*/
 public class User {
     
     private String name;
@@ -19,7 +21,7 @@ public class User {
         this.wins = wins;
         this.losses = losses;
     }
-
+   
     public String getName() {
         return this.name;
     }
@@ -29,18 +31,27 @@ public class User {
         return editedName;
     }
 */
+    
     public int getWins() {
         return wins;
     }
+    
+    
 
     public int getLosses() {
         return losses;
     }
-        
+    
+    /**
+    * Adds a win to the user.
+    */
     public void addWin() {
         this.wins++;
     }
     
+    /**
+    * Adds a loss to the user.
+    */
     public void addLoss() {
         this.losses++;
     }

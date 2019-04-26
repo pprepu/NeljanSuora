@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package dao;
 
-import java.util.Collection;
-import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,12 +15,15 @@ import neljansuora.controller.Usercontrol;
 import neljansuora.domain.User;
 import neljansuora.controller.Gamecontrol;
 import neljansuora.dao.FileUserDao;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import org.junit.Assert;
 
 /**
  *
  * @author annika
  */
-public class NeljanSuoraTest {
+public class FileUserDaoTest {
     
     User defaultUser;
     Usercontrol control;
@@ -30,21 +32,9 @@ public class NeljanSuoraTest {
     @Before
     public void setUp() {
         defaultUser = new User("Petteri");
-        control = new Usercontrol();
         fileUserDao = new FileUserDao("testusers.txt");
+        fileUserDao.saveToFile();
     }
-    
-    
-    @Test
-    public void getNameinUserIsWorkingProperly() {
-        assertEquals("Petteri", defaultUser.getName());
-    }
-
-    @Test
-    public void toStringInUserIsWorkingProperly() {
-        assertEquals("Petteri;0;0", defaultUser.toString());
-    }
-    
     
     @Test
     public void addingUserReturnsTrueWhenNameIsNotTaken() {
@@ -88,17 +78,13 @@ public class NeljanSuoraTest {
     }
     
     @Test
-    public void userConstructorDefinesStartingLossesCorrectly() {
-        assertEquals(0, defaultUser.getLosses());
+    public void addUserWithAllThreeParameterWorks() {
+        fileUserDao.addUser("Voittaja", 100, 1);
+        assertEquals(fileUserDao.getUser("Voittaja").toString(), "Voittaja;100;1");
     }
     
     @Test
-    public void userConstructorDefinesStartingWinsCorrectly() {
-        assertEquals(0, defaultUser.getWins());
-    }
-    
-    @Test
-    public void userControlGetUsersReturnsACollectionWithAllUsers() {
+    public void fileUserDaoGetUsersReturnsACollectionWithAllUsers() {
         fileUserDao.addUser(defaultUser);
         fileUserDao.addUser("Teppo");
         fileUserDao.addUser("PeliMarkku");
@@ -121,49 +107,34 @@ public class NeljanSuoraTest {
     }
     
     @Test
-    public void readFromFileWorksProperly() {
-        fileUserDao.readFromFile();
+    public void changeUserStateDoesNotAddNewUsers() {
+        fileUserDao.addUser("Janne");
+        fileUserDao.changeUserState(new User ("newUser"));
+        assertEquals(1, fileUserDao.getUsers().size());
+    }
+    
+    @Test
+    public void changeUserStateChangesExistingUserValues() {
+        fileUserDao.addUser("Timo");
+        fileUserDao.changeUserState(new User ("Timo", 100, 5));
+        assertEquals("Timo;100;5", fileUserDao.getUser("Timo").toString());
+    }
+    
+    @Test
+    public void savingAndReadingFromFileWorksWithValidFilename() {
+        fileUserDao.addUser("Test");
+        fileUserDao.saveToFile();
         
-        assertEquals(2, fileUserDao.userCount());
+        FileUserDao newFileUserDao = new FileUserDao("testusers.txt");
+        newFileUserDao.readFromFile();
+        assertEquals(newFileUserDao.userCount(), 1);
     }
-    
-    @Test
-    public void currentUserIsNullAtFirst() {
-        assertEquals(null, this.control.getCurrentUser());
+    /*
+    @Test(expected = IOException.class)
+    public void throwsException() { // will pass
+        FileUserDao newFileUserDao = new FileUserDao("notAnExistingFile");
+        
+        newFileUserDao.readFromFile();
     }
-    
-    @Test
-    public void loginChangesCurrentUser() {
-        control.logIn(new User("Jani"));
-        assertEquals("Jani", control.getCurrentUser().getName());
-    }
-    
-    @Test 
-        public void getCurrentUserWorksProperly() {
-        control.logIn(new User("Jani"));
-        assertEquals("Jani;0;0", control.getCurrentUser().toString());
-    }
-    
-    @Test
-    public void logoutChangesCurrentUserToNull() {
-        control.logIn(new User("Jani"));
-        control.logOut();
-        assertEquals(null, this.control.getCurrentUser());
-    }
-    
-    @Test
-    public void addWinsAddsAWin() {
-        control.logIn(new User("Jani"));
-        control.win();
-        control.win();
-        assertEquals(2, control.getCurrentUser().getWins());
-    }
-    
-    @Test
-    public void addLossAddsALoss() {
-        control.logIn(new User("Jani"));
-        control.lose();
-        control.lose();
-        assertEquals(2, control.getCurrentUser().getLosses());
-    }
+    */
 }

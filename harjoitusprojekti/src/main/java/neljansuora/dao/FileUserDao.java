@@ -1,6 +1,7 @@
 
 package neljansuora.dao;
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import neljansuora.domain.User;
 import java.util.HashMap;
@@ -10,7 +11,9 @@ import java.util.List;
 import java.util.Scanner;
 import neljansuora.dao.UserDao;
 
-
+/**
+  * This class handles services related to users in the db.
+  */
 public class FileUserDao implements UserDao {
     
     private HashMap<String, User> users;
@@ -21,6 +24,14 @@ public class FileUserDao implements UserDao {
         this.users = new HashMap<>();
         this.filename = filename;
     }
+    
+  /**
+    * This method adds a new User into FileUserDao with 0 wins and 0 losses.
+    *
+    * @param   username   Name of the new user
+    * 
+    * @return True, if a new User is actually added, false if the user already exists.
+    */
     
     public boolean addUser(String username) {
         String key = modifyName(username);
@@ -33,6 +44,16 @@ public class FileUserDao implements UserDao {
         return false;
     }
     
+    
+  /**
+    * This method adds a new User into FileUserDao.
+    *
+    * @param   username   Name of the new user
+    * @param   wins    Number of wins
+    * @param   losses  Numbef of losses
+    * 
+    * @return True, if a new User is actually added, false if the user already exists.
+    */
     public boolean addUser(String username, int wins, int losses) {
         String key = modifyName(username);
         
@@ -44,7 +65,13 @@ public class FileUserDao implements UserDao {
         return false;
     }
     
-    
+  /**
+    * This method adds a new User into FileUserDao.
+    *
+    * @param   user    User being added.
+    * 
+    * @return True, if a new User is actually added, false if the user already exists.
+    */
     @Override
     public boolean addUser(User user) {
         //käyttäjien avaimet lisätään muokatussa muodossa
@@ -59,6 +86,14 @@ public class FileUserDao implements UserDao {
         return false;
     }
     
+  /**
+    * This method is used to test if an User with a specific name already exists in the FileUserDao.
+    *
+    * @param   name    Name of the user being searched for.
+    * 
+    * @return True, if the user exists and false if it doesn't.
+    */
+    
     @Override
     public boolean userExists(String name) {
         String editedName = modifyName(name);
@@ -70,6 +105,10 @@ public class FileUserDao implements UserDao {
         
         return false;
     }
+    
+  /**
+    * Reads users to FileUserDao from a file.
+    */
     
     public void readFromFile() {
         try (Scanner reader = new Scanner(new File(this.filename))) {
@@ -86,6 +125,10 @@ public class FileUserDao implements UserDao {
         }
     }
     
+  /**
+    * Saves users to FileUserDao from a file.
+    */
+    
     public void saveToFile() {
         try (PrintWriter writer = new PrintWriter(this.filename)) {
         
@@ -94,11 +137,15 @@ public class FileUserDao implements UserDao {
             }
 
             writer.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
     
+  /**
+    * Checks the number of all users.
+    * @return Number of users.
+    */
     public int userCount() {
         return this.users.size();
     }
@@ -117,6 +164,11 @@ public class FileUserDao implements UserDao {
         return this.users.values();
     }
     
+    
+    /**
+    * Adds an user with updated variables over an existing user (if it has been added/it exists).
+    * @param    user    User, whose variables are being changed.
+    */
     @Override
     public void changeUserState(User user) {
         if (userExists(user.getName())) {
