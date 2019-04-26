@@ -11,6 +11,8 @@ Sovelluksella on mahdollista pelata [neljän suora](https://fi.wikipedia.org/wik
 
 [Arkkitehtuuri](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Käyttöohje](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 ## Releaset
 
 [Viikon 5 release](https://github.com/pprepu/ot-harjoitustyo/releases/tag/viikko5)
@@ -33,6 +35,13 @@ Testikattavuusraportti luodaan komennolla
 > mvn test jacoco report
 
 Kattavuusraportti löytyy tiedostosta *target/site/jacoco/index.html*
+
+### JavaDoc
+
+JavaDoc generoidaan komennolla
+> mvn javadoc: javadoc
+
+Generoitu JavaDoc löytyy tiedostosta *target/site/apidocs/index.html*
 
 ### Checkstyle
 
