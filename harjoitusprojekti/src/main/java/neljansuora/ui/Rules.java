@@ -36,7 +36,7 @@ public class Rules {
         layout.setStyle("-fx-background-color: white");
         layout.setAlignment(Pos.CENTER);
         
-        //create its components
+        // create its components
         Label header = new Label("RULES");
         header.setTextFill(Color.BLACK);
         header.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
@@ -58,7 +58,7 @@ public class Rules {
             window.setScene(this.prevScene);
         });
         
-        //add components to layout
+        // add components to layout
         layout.getChildren().addAll(header, rules1, rules2, rules3, rules4, backButton);
         
         Scene rulesScene = new Scene(layout);

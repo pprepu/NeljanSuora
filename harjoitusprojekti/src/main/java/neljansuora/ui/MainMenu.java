@@ -4,6 +4,7 @@ package neljansuora.ui;
 import java.io.FileInputStream;
 import neljansuora.controller.Gamecontrol;
 import neljansuora.domain.User;
+import neljansuora.ui.NeljanSuoraUi;
 import neljansuora.controller.Usercontrol;
 import neljansuora.dao.FileUserDao;
 import java.util.Collection;
@@ -50,7 +51,7 @@ public class MainMenu {
         layout.setStyle("-fx-background-color: white");
         layout.setAlignment(Pos.CENTER);
         
-        //..and its components
+        // ..and its components
         
         Label label = new Label("Neljän suora");
         label.setTextFill(Color.BLACK);
@@ -59,10 +60,8 @@ public class MainMenu {
         Button playButton = new Button("Play");
         playButton.setStyle("-fx-background-color: white;-fx-text-fill: black;-fx-font-size: 15pt;");
         
-        
         Button rulesButton = new Button("Rules");
         rulesButton.setStyle("-fx-background-color: white;-fx-text-fill: black;-fx-font-size: 15pt;");
-        
         
         Button statsButton = new Button("Statistics");
         statsButton.setStyle("-fx-background-color: white;-fx-text-fill: black;-fx-font-size: 15pt;");
@@ -70,19 +69,20 @@ public class MainMenu {
         Button quitButton = new Button("Quit");
         quitButton.setStyle("-fx-background-color: white;-fx-text-fill: black;-fx-font-size: 15pt;");
         
-        
+        Button logoutButton = new Button("Logout");
+        logoutButton.setStyle("-fx-background-color: white;-fx-text-fill: black;-fx-font-size: 15pt;");
         
         // add components into layout
-        layout.getChildren().addAll(label, playButton, rulesButton, statsButton, quitButton);
+        layout.getChildren().addAll(label, playButton, rulesButton, statsButton, logoutButton, quitButton);
 
         Scene menuScene = new Scene(layout);
         
         
-        //add functionality to buttons
+        // add functionality to buttons
         playButton.setOnAction(event -> {
             Game game = new Game(this.userControl, this.fileUserDao, menuScene);
             try {
-                 game.display(window);
+                 game.displayPreGameStage(window);
             } catch (Exception e) {
                 
             }
@@ -97,11 +97,30 @@ public class MainMenu {
             }
         });
         
+        statsButton.setOnAction(event -> {
+            Statistics stats = new Statistics(this.userControl, this.fileUserDao, menuScene);
+            try {
+                 stats.display(window);
+            } catch (Exception e) {
+
+            }
+        });
+        
+        logoutButton.setOnAction(event -> {
+        this.userControl.logOut();
+        Login login = new Login(this.userControl, this.fileUserDao);
+            try {
+                 login.display(window);
+            } catch (Exception e) {
+
+            }
+        });
+        
         quitButton.setOnAction(event -> {
             window.close();
         });
         
-        //add scene to stage
+        // add scene to stage
         
         window.setScene(menuScene);
         window.setTitle("Neljän suora");

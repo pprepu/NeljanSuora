@@ -4,7 +4,7 @@ package neljansuora.domain;
 /**
 * Represents players of the game, whose statistics are saved into a database.
 */
-public class User {
+public class User implements Comparable<User> {
     
     private String name;
     private int wins;
@@ -25,12 +25,6 @@ public class User {
     public String getName() {
         return this.name;
     }
-/*
-    public String getNameModified() {
-        String editedName = this.name.trim().toUpperCase();
-        return editedName;
-    }
-*/
     
     public int getWins() {
         return wins;
@@ -54,6 +48,11 @@ public class User {
     */
     public void addLoss() {
         this.losses++;
+    }
+    
+    @Override
+    public int compareTo(User user) {
+        return user.getWins() - this.wins;
     }
         
 

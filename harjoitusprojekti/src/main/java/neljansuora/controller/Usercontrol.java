@@ -17,10 +17,12 @@ import neljansuora.dao.UserDao;
 public class Usercontrol {
     
     private User currentUser;
+    private User player2;
     
     
     public Usercontrol() {
         this.currentUser = null;
+        this.player2 = null;
     }
     
     /**
@@ -47,7 +49,14 @@ public class Usercontrol {
     public User getCurrentUser() {
         return this.currentUser;
     }
-
+    
+    public void setPlayer2(User user) {
+        this.player2 = user;
+    }
+    
+    public User getPlayer2() {
+        return this.player2;
+    }
     /**
     * Adds a win to logged in User.
     */
@@ -60,5 +69,14 @@ public class Usercontrol {
     public void lose() {
         getCurrentUser().addLoss();
     }
+    
+    public void p2Win() {
+        getPlayer2().addWin();
+    }
+    
+    public void p2Lose() {
+        getPlayer2().addLoss();
+    }
+    
 
 }
