@@ -17,8 +17,8 @@ päivä | aika | mitä tein
 11.4| 2 | Tilastojen näyttäminen pelissä ja peräkkäisten pelien pelaamisen mahdollistaminen
 25.4| 3 | Testirakenteen uudelleen muodostaminen ja uusien testien luominen
 26.4| 1 | Layoutin viilausta
-2.5 | 3 | UI:n rakenteen uudelleenmuodostaminen
-2.5 | 4 | Uusien näkymien luominen
+2.5 | 2 | UI:n rakenteen uudelleenmuodostaminen
+2.5 | 5 | Uusien näkymien luominen
 2.5 | 1 | Vanhojen näkymien muokkaaminen
 3.5 | 2 | Peliruudun muokkaaminen kauniimmaksi ja helpommin lähestyttäväksi
 3.5 | 4 | Tilastonäkymän luominen
