@@ -8,7 +8,15 @@ Peliin luodaan käyttäjätunnus, jonka perusteella pidetään kirjaa pelatuista
 
 ## Käyttäjät
 
-Sovellus sisältää ainoastaan yhden käyttäjäroolin, *normaalin käyttäjän*, jolla peliä pääsee pelaamaan.
+Sovellus sisältää ainoastaan kaksi käyttäjäroolia, normaalin käyttäjän ja kaksinpelissä toisen pelaajan. 
+*Normaali käyttäjä* on se rooli, jolla peliin ensiin kirjaudutaan. Tässä roolissa pääsee pelaamisen lisäksi katsastelemaan omia voitto- ja tappiotilastojaan tilasto-osiossa.
+*Toinen pelaaja* kirjautuu sisään ennen kuin kaksinpeliä aletaan pelaamaan. Kun peli(t) on pelattu, kirjataan hänet kuitenkin ulos sovelluksesta.
+
+## Käyttöliittymä
+
+Sovelluksessa on graafinen käyttöliittymä, joka tarjoaa useita näkymiä käyttäjälle.
+
+Sovellus käynnistyy kirjautumisnäkymään, josta onnistunut kirjautuminen siirtää käyttäjän yleismenuun, josta taas pääsee sekä sääntöjen lukemiseen, pelialueelle, tilastojen tarkasteluun sekä takaisin kirjautumisnäkymään kirjautumalla ulos sovelluksesta. Tästä näkymästä sovellus voidaan myös sulkea.
 
 ## Perusversion tarjoama toiminnallisuus
 
@@ -19,8 +27,9 @@ Sovellus sisältää ainoastaan yhden käyttäjäroolin, *normaalin käyttäjän
 
 ### Kirjautumisen jälkeen
 
-* neljän suora -pelin pelaaminen tietokonetta/yksinkertaista tekoälyä vastaan
+* neljän suora -pelin pelaaminen lokaalisti toista käyttäjää vastaan.
 * käyttäjätunnuksella pelattujen pelien tulosten tarkastelu
+* eniten voittoja omaavien käyttäjien tilastojen tarkastelu
 * käyttäjä voi kirjautua ulos sovelluksesta
 
 ## Jatkokehitysideoita
@@ -30,4 +39,5 @@ Ajan riittäessä perusversiota laajennetaan esim. seuraavilla toiminnallisuksil
 * käyttäjätunnuksen ja siihen liittyvän pelihistorian poisto
 * salasanan lisääminen kirjautumiseen
 * pelimuodon sääntöjen muuttaminen, esim. rivien tai sarakkeiden lisääminen *(perusversiossa 7 saraketta ja 6 riviä)* ja/tai tarvittavien peräkkäisten kiekkojen määrän muuttaminen
-* pelaaminen toista käyttäjää vastaan
+* pelaaminen yksinkertaista tekoälyä vastaan
+* monimutkaisempien tilastojen ylläpito, esim. käyttäjäkohtaiset viimeisen 10 pelin tulokset
