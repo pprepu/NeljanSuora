@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa projektin [.jar -tiedosto.](https://github.com/pprepu/ot-harjoitustyo/releases/download/viikko5/harjoitusprojekti-1.0-SNAPSHOT.jar)
+Lataa projektin [.jar -tiedosto.](https://github.com/pprepu/NeljanSuora/releases/download/loppupalautus/harjoitusprojekti-1.0-SNAPSHOT.jar)
 
 ## Konfigurointi
 
