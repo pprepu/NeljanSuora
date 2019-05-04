@@ -138,7 +138,7 @@ public class FileUserDao implements UserDao {
 
             writer.close();
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+            
         }
     }
     
