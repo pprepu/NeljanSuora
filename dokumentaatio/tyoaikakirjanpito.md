@@ -23,5 +23,8 @@ päivä | aika | mitä tein
 3.5 | 2 | Peliruudun muokkaaminen kauniimmaksi ja helpommin lähestyttäväksi
 3.5 | 4 | Tilastonäkymän luominen
 3.5 | 2 | Lisäfunktioiden luominen ja asettelun parantelu kaikkiin näkymiin
-yht | 51|
+4.5 | 3 | Uusien testien luominen ja parantaminen, FakeGamecontrol-luokan luominen testausta varten
+4.5 | 1 | Ui-näkymien parantamista, mm. tilastoihin liittyvät diagrammit
+4.5 | 5 | Dokumentaation parantaminen, javadocin viimeistely
+yht | 60|
 
