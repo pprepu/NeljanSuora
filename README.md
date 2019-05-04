@@ -32,14 +32,14 @@ Testit suoritetaan komennolla
 > mvn test
 
 Testikattavuusraportti luodaan komennolla
-> mvn test jacoco report
+> mvn test jacoco:report
 
 Kattavuusraportti löytyy tiedostosta *target/site/jacoco/index.html*
 
 ### JavaDoc
 
 JavaDoc generoidaan komennolla
-> mvn javadoc: javadoc
+> mvn javadoc:javadoc
 
 Generoitu JavaDoc löytyy tiedostosta *target/site/apidocs/index.html*
 
