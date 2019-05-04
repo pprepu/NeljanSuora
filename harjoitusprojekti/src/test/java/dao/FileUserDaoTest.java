@@ -1,24 +1,33 @@
 
 package dao;
 
+import java.io.File;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import neljansuora.controller.Usercontrol;
 import neljansuora.domain.User;
 import neljansuora.dao.FileUserDao;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 
 public class FileUserDaoTest {
-
+    
+    @Rule
+    public TemporaryFolder testingFolder = new TemporaryFolder(); 
+    
+    File testFile;
     User defaultUser;
     Usercontrol control;
     FileUserDao fileUserDao;
     
     @Before
-    public void setUp() {
+    public void setUp() throws Exception {
+        
+        testFile = testingFolder.newFile("testusers.txt");
         defaultUser = new User("Petteri");
-        fileUserDao = new FileUserDao("testusers.txt");
+        fileUserDao = new FileUserDao(testFile.getAbsolutePath());
         fileUserDao.saveToFile();
     }
     
@@ -119,7 +128,7 @@ public class FileUserDaoTest {
         fileUserDao.addUser("Test");
         fileUserDao.saveToFile();
         
-        FileUserDao newFileUserDao = new FileUserDao("testusers.txt");
+        FileUserDao newFileUserDao = new FileUserDao(testFile.getAbsolutePath());
         newFileUserDao.readFromFile();
         assertEquals(newFileUserDao.userCount(), 1);
     }
