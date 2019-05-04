@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa projektin [.jar -tiedosto.](https://github.com/pprepu/NeljanSuora/releases/download/loppupalautus/harjoitusprojekti-1.0-SNAPSHOT.jar)
+Lataa projektin [.jar -tiedosto.](https://github.com/pprepu/NeljanSuora/releases/download/loppupalautus/harjoitusprojekti-1.0-SNAPSHOT.jar) sekä konfiguraatiotiedosto [config.properties](https://github.com/pprepu/NeljanSuora/releases/download/loppupalautus/config.properties)
 
 ## Konfigurointi
 
@@ -37,7 +37,7 @@ Kirjautumisnäkymän jälkeen sovellus avaa päävalikon josta pääsee eteenpä
 
 ## Pelaaminen
 
-Pelaaminen tapahtuu painamalla pelialueen alapuolella olevia insert nappeja. Pelialueen yläpuolella oleva teksti taas kertoo, kenen vuoro tietyllä hetkellä on. Se myös ilmoittaa, mikäli peli päättyy jomman kumman voittoon. Alhaalla lukee molempien kirjautuneiden pelaajien voittojen ja tappioiden määärä.
+Pelaaminen tapahtuu painamalla pelialueen alapuolella olevia insert nappeja. Pelialueen yläpuolella oleva teksti taas kertoo, kenen vuoro tietyllä hetkellä on. Se myös ilmoittaa, mikäli peli päättyy jomman kumman voittoon. Alhaalla lukee molempien kirjautuneiden pelaajien voittojen ja tappioiden määrät.
 
 ![](https://raw.githubusercontent.com/pprepu/ot-harjoitustyo/master/dokumentaatio/kuvat/peliNakyma.PNG)
 
