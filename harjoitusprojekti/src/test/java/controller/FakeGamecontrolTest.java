@@ -69,6 +69,13 @@ public class FakeGamecontrolTest {
         playTile(5, 2);
         playTile(5, 3);
         assertEquals(true, this.controller.checkRows(this.gameArea));
+        
+        resetGameArea();
+        playTileO(5, 0);
+        playTileO(5, 1);
+        playTileO(5, 2);
+        playTileO(5, 3);
+        assertEquals(true, this.controller.checkRows(this.gameArea));
     }
     
     @Test
@@ -80,13 +87,20 @@ public class FakeGamecontrolTest {
     @Test
     public void checkColumnsReturnsTrueWhenFourDiscsAreConnected() {
         resetGameArea();
-        // a reminder, that the 2d-array is turned horisontally in Game class
         playTile(0, 5);
         playTile(1, 5);
         playTile(2, 5);
         playTile(3, 5);
         assertEquals(true, this.controller.checkColumns(this.gameArea));
+        
+        resetGameArea();
+        playTileO(0, 5);
+        playTileO(1, 5);
+        playTileO(2, 5);
+        playTileO(3, 5);
+        assertEquals(true, this.controller.checkColumns(this.gameArea));
     }
+    
     
     @Test
     public void bothDiagonalChecksReturnFalseWhenGameStarts() {
@@ -103,6 +117,13 @@ public class FakeGamecontrolTest {
         playTile(2, 2);
         playTile(3, 3);
         assertEquals(true, this.controller.checkDiagonallyLToR(this.gameArea));
+        
+        resetGameArea();
+        playTileO(0, 0);
+        playTileO(1, 1);
+        playTileO(2, 2);
+        playTileO(3, 3);
+        assertEquals(true, this.controller.checkDiagonallyLToR(this.gameArea));
     }
     
     @Test
@@ -113,10 +134,17 @@ public class FakeGamecontrolTest {
         playTile(2, 3);
         playTile(3, 2);
         assertEquals(true, this.controller.checkDiagonallyRToL(this.gameArea));
+        
+        resetGameArea();
+        playTileO(0, 5);
+        playTileO(1, 4);
+        playTileO(2, 3);
+        playTileO(3, 2);
+        assertEquals(true, this.controller.checkDiagonallyRToL(this.gameArea));
     }
     
     @Test
-    public void gameIsOverReturnsFalseWhenGameStarts() {
+    public void gameIsOverReturnsFalseWhenGameAreaIsEmpty() {
         resetGameArea();
         assertEquals(false, this.controller.gameIsOver(this.gameArea));
     }
@@ -165,5 +193,9 @@ public class FakeGamecontrolTest {
     
     private void playTile(int posCol, int posRow) {
         this.gameArea[posCol][posRow] = "X";
+    }
+    
+    private void playTileO(int posCol, int posRow) {
+        this.gameArea[posCol][posRow] = "O";
     }
 }
