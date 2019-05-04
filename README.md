@@ -18,6 +18,7 @@ Sovelluksella on mahdollista pelata lokaalisti kaksinpelinä [neljän suora](htt
 ## Releaset
 
 [Viikon 5 release](https://github.com/pprepu/ot-harjoitustyo/releases/tag/viikko5)
+
 [Loppupalautus](https://github.com/pprepu/NeljanSuora/releases/tag/loppupalautus)
 
 ## Komentorivitoiminnot
