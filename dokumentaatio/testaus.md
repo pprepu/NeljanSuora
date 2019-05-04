@@ -31,6 +31,8 @@ Järjestelmätestaus on suoritettu manuaalisesti.
 
 Sovellus on ladattu ja testattu eri OSX-ympäristöissä niin, että se käynnistyshakemistossa on ollut käyttöohjeen mainitsema pakollinen *config.properties* -tiedosto.
 
+Sovellusta on testattu paitsi tilanteissa, joissa käyttäjät sisältävä tiedosto on ollut olemassa, myös niissä tilanteissa, joissa sitä ei ole ollut. Tällöin sovellus on luonut sen itse.
+
 ### Toiminnallisuudet
 
 [Määrittelydokumentissa](https://github.com/pprepu/NeljanSuora/edit/master/dokumentaatio/vaatimusmaarittely.md) listatut toiminnallisuudet on käyty läpi. Lisäksi sovelluksen kirjautumis- ja uuden käyttäjän luomisprosesseja on testattu syöttämällä sovelluksessa monenlaisia eri arvoja, kuten selkeästi virheellisiä (tyhjiä) arvoja. Myös sovelluksen generoimia tilastoihin liittyvien diagrammien muotoja on testailtu erilaisilla voitto- sekä tappiomäärillä.
