@@ -60,7 +60,7 @@ public class Gamecontrol {
     * 
     * @return True if such combo exists, false if not.
     */
-    private boolean checkRows(Label[][] gameArea) {
+    public boolean checkRows(Label[][] gameArea) {
         String currentRow = "";
         for (int i = 0; i < 7; i++) {
             for (int y = 0; y < 6; y++) {
@@ -81,7 +81,7 @@ public class Gamecontrol {
     * 
     * @return True if such combo exists, false if not.
     */
-    private boolean checkColumns(Label[][] gameArea) {
+    public boolean checkColumns(Label[][] gameArea) {
         String currentCol = "";
         for (int i = 0; i < 6; i++) {
             for (int y = 0; y < 7; y++) {
@@ -102,7 +102,7 @@ public class Gamecontrol {
     * 
     * @return True if such combo exists, false if not.
     */
-    private boolean checkDiagonallyLToR(Label[][] gameArea) {
+    public boolean checkDiagonallyLToR(Label[][] gameArea) {
         String currentDiag = "";
         int column = 0;
         for (int startingRow = 0; startingRow < 3; startingRow++) {
@@ -134,7 +134,7 @@ public class Gamecontrol {
     * @return True if such combo exists, false if not.
     */
     
-    private boolean checkDiagonallyRToL(Label[][] gameArea) {
+    public boolean checkDiagonallyRToL(Label[][] gameArea) {
         String currentDiag = "";
         int column = 0;
         for (int startingRow = 0; startingRow < 3; startingRow++) {
