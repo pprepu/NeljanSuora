@@ -33,6 +33,7 @@
             <configuration>
                 <excludes>
                     <exclude>neljansuora/ui/*</exclude>
+                    <exclude>neljansuora/controller/Gamecontrol.*</exclude>
                 </excludes>
             </configuration> 
             <executions>

@@ -52,6 +52,14 @@ public class FileUserDaoTest {
     }
     
     @Test
+    public void addingUserWithAllThreeParametersReturnsFalseWhenNameIsTaken() {
+        fileUserDao.addUser("Teppo");
+        boolean added = fileUserDao.addUser("Teppo", 0, 0);
+        
+        assertEquals(false, added);
+    }
+    
+    @Test
     public void addUserReturnsTrueWhenUsingUserParameterAndUserHasNotBeenAdded() {
         boolean added = fileUserDao.addUser(defaultUser);
         

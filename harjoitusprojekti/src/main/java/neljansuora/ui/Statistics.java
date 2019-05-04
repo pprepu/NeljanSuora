@@ -94,8 +94,8 @@ public class Statistics {
         
         barChartTopWinners.getData().add(topWinners);
         
-        // finally, customize upperbound of y-axis with current top-winners number of wins
-        yAxisTop.setUpperBound(allUsersSortedByWins.get(0).getWins() + 2);
+        // finally, customize upperbound of y-axis with current top-winner's number of wins
+        yAxisTop.setUpperBound(allUsersSortedByWins.get(0).getWins());
         
         // buttons for changing stats-view
         final ToggleGroup viewOptions = new ToggleGroup();

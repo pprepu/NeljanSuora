@@ -37,6 +37,7 @@ public class Login {
         //VBox mainLayout = new VBox();
         BorderPane mainLayout = new BorderPane();
         mainLayout.setPrefSize(WIDTH, HEIGHT);
+        mainLayout.setStyle("-fx-background-color: white");
         
         
          //create loginView

@@ -71,4 +71,33 @@ public class UsercontrolTest {
         control.lose();
         assertEquals(2, control.getCurrentUser().getLosses());
     }
+    
+    @Test
+    public void player2IsNotDefinedOnStartup() {
+        assertEquals(null, control.getPlayer2());
+    }
+    
+    @Test
+    public void settingPlayer2Works() {
+        control.setPlayer2(new User("Tapani"));
+        assertEquals("Tapani", control.getPlayer2().getName());
+    }
+    
+    @Test
+    public void p2WinAddsWins() {
+        control.setPlayer2(new User("Tapani"));
+        control.p2Win();
+        control.p2Win();
+        assertEquals(2, control.getPlayer2().getWins());
+    }
+    
+    @Test
+    public void p2LoseAddsLosses() {
+        control.setPlayer2(new User("Tapani"));
+        control.p2Lose();
+        control.p2Lose();
+        control.p2Lose();
+        control.p2Lose();
+        assertEquals(4, control.getPlayer2().getLosses());
+    }
 }

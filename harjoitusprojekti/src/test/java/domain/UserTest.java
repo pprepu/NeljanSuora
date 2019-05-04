@@ -48,5 +48,27 @@ public class UserTest {
         assertEquals(0, defaultUser.getWins());
     }
     
+    @Test
+    public void compareToReturns0WhenUsersHaveEqualAmountOfWins() {
+        User user1 = new User("Kalle", 5, 0);
+        User user2 = new User("Timppa", 5, 0);
+        
+        assertEquals(0, user1.compareTo(user2));
+    }
     
+    @Test
+    public void compareToReturnsNegativeIntegerWhenUserHasMoreWins() {
+        User user1 = new User("Kalle", 5, 0);
+        User user2 = new User("Tapsa", 3, 0);
+        
+        assertTrue(user1.compareTo(user2) < 0);
+    }
+    
+    @Test
+    public void compareToReturnsPositiveIntegerWhenUserHasLessWins() {
+        User user1 = new User("Kalle", 5, 0);
+        User user2 = new User("Tapsa", 3, 0);
+        
+        assertTrue(user2.compareTo(user1) > 0);
+    }
 }

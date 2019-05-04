@@ -1,11 +1,10 @@
-
 package neljansuora.controller;
-import javafx.scene.control.Label;
 
 /**
-* Checks the current state of the game and gives information about valid moves and if the game is already over.
+* This class is used for testing purposes - it doesn't do anything in the actual programme.
+* Only essential difference with class Gamecontrol is that this class uses String 2d arrays instead of Label arrays.
 */
-public class Gamecontrol {
+public class FakeGamecontrol {
     
     
     /**
@@ -16,11 +15,11 @@ public class Gamecontrol {
     * 
     * @return Index of the tile that is free. If the column is full, returns -1.
     */
-    public int getPlayableTile(Label[][] gameArea, int index) {
+    public int getPlayableTile(String[][] gameArea, int index) {
         
         //checking playable tile from the bottom
         for (int i = 5; i >= 0; i--) {
-            if (gameArea[index][i].getText().equals(" ")) {
+            if (gameArea[index][i].equals(" ")) {
                 return i;
             }
         }
@@ -34,7 +33,7 @@ public class Gamecontrol {
     * 
     * @return True if game is indeed over and false, if it still should continue.
     */
-    public boolean gameIsOver(Label[][] gameArea) {
+    public boolean gameIsOver(String[][] gameArea) {
         if (checkRows(gameArea)) { 
             return true;
         }
@@ -60,11 +59,11 @@ public class Gamecontrol {
     * 
     * @return True if such combo exists, false if not.
     */
-    private boolean checkRows(Label[][] gameArea) {
+    public boolean checkRows(String[][] gameArea) {
         String currentRow = "";
         for (int i = 0; i < 7; i++) {
             for (int y = 0; y < 6; y++) {
-                currentRow += gameArea[i][y].getText();
+                currentRow += gameArea[i][y];
             }
             if (currentRow.contains("XXXX") || currentRow.contains("OOOO")) {
                 return true;
@@ -81,11 +80,11 @@ public class Gamecontrol {
     * 
     * @return True if such combo exists, false if not.
     */
-    private boolean checkColumns(Label[][] gameArea) {
+    public boolean checkColumns(String[][] gameArea) {
         String currentCol = "";
         for (int i = 0; i < 6; i++) {
             for (int y = 0; y < 7; y++) {
-                currentCol += gameArea[y][i].getText();
+                currentCol += gameArea[y][i];
             }
             if (currentCol.contains("XXXX") || currentCol.contains("OOOO")) {
                 return true;
@@ -102,7 +101,7 @@ public class Gamecontrol {
     * 
     * @return True if such combo exists, false if not.
     */
-    private boolean checkDiagonallyLToR(Label[][] gameArea) {
+    public boolean checkDiagonallyLToR(String[][] gameArea) {
         String currentDiag = "";
         int column = 0;
         for (int startingRow = 0; startingRow < 3; startingRow++) {
@@ -110,7 +109,7 @@ public class Gamecontrol {
                 column = startingColumn;
                 for (int row = startingRow; row < gameArea[0].length; row++) {
                     if (column < gameArea.length) {
-                        currentDiag += gameArea[column][row].getText();
+                        currentDiag += gameArea[column][row];
                         column++;
                     }
                 }
@@ -134,7 +133,7 @@ public class Gamecontrol {
     * @return True if such combo exists, false if not.
     */
     
-    private boolean checkDiagonallyRToL(Label[][] gameArea) {
+    public boolean checkDiagonallyRToL(String[][] gameArea) {
         String currentDiag = "";
         int column = 0;
         for (int startingRow = 0; startingRow < 3; startingRow++) {
@@ -142,7 +141,7 @@ public class Gamecontrol {
                 column = startingColumn;
                 for (int row = startingRow; row < gameArea[0].length; row++) {
                     if (column >= 0) {
-                        currentDiag += gameArea[column][row].getText();
+                        currentDiag += gameArea[column][row];
                         column--;
                     }
                 }
@@ -157,5 +156,4 @@ public class Gamecontrol {
    
         return false;
     }
-
 }

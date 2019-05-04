@@ -35,7 +35,7 @@ public class Game {
     private boolean gameOver;
     private Scene prevScene;
     
-    public Game (Usercontrol userControl, FileUserDao fileUserDao, Scene prevScene) {
+    public Game(Usercontrol userControl, FileUserDao fileUserDao, Scene prevScene) {
         this.userControl = userControl;
         this.fileUserDao = fileUserDao;
         this.controller = new Gamecontrol();
@@ -50,7 +50,7 @@ public class Game {
         VBox layout = new VBox(30);
         layout.setPrefSize(WIDTH, HEIGHT);
         layout.setAlignment(Pos.CENTER);
-        
+        layout.setStyle("-fx-background-color: white");
 
          // create loginView
         // create the layout
@@ -156,8 +156,11 @@ public class Game {
         VBox mainLayout = new VBox(30);
         mainLayout.setPrefSize(WIDTH, HEIGHT);
         mainLayout.setAlignment(Pos.CENTER);
-        HBox buttons = new HBox();
+        mainLayout.setStyle("-fx-background-color: white");
+        
         // create its components and add them to the layout
+        HBox buttons = new HBox();
+        
         Button resetButton = new Button("Reset");
         resetButton.setStyle("-fx-text-fill: black;-fx-font-size: 15pt;");
         resetButton.setOnAction((event) -> {
@@ -188,6 +191,7 @@ public class Game {
         VBox layout = new VBox(20);
         layout.setPrefSize(WIDTH, HEIGHT);
         layout.setAlignment(Pos.CENTER);
+        layout.setStyle("-fx-background-color: white");
         
         // create its components
         Label turnLabel = new Label("Turn: " + userControl.getCurrentUser().getName());

@@ -121,7 +121,7 @@ public class FileUserDao implements UserDao {
                 addUser(currentUser);
             }
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            saveToFile();
         }
     }
     
