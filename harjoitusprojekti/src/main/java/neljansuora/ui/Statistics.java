@@ -102,7 +102,6 @@ public class Statistics {
         }
         
         barChartTopWinners.getData().add(topWinners);
-        
 
         // to ensure a nice, good looking graph, both upperbound and tickunit are set to be scaled by top winner's total wins
         
