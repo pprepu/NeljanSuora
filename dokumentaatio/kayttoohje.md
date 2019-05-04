@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa projektin [.jar -tiedosto.](https://github.com/pprepu/NeljanSuora/releases/download/loppupalautus/harjoitusprojekti-1.0-SNAPSHOT.jar) sekä konfiguraatiotiedosto [config.properties](https://github.com/pprepu/NeljanSuora/releases/download/loppupalautus/config.properties)
+Lataa projektin [.jar -tiedosto](https://github.com/pprepu/NeljanSuora/releases/download/loppupalautus/harjoitusprojekti-1.0-SNAPSHOT.jar) sekä konfiguraatiotiedosto [config.properties](https://github.com/pprepu/NeljanSuora/releases/download/loppupalautus/config.properties)
 
 ## Konfigurointi
 
