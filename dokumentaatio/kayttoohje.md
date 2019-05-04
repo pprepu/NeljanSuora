@@ -5,13 +5,13 @@ Lataa projektin [.jar -tiedosto.](https://github.com/pprepu/ot-harjoitustyo/rele
 ## Konfigurointi
 
 Ohjelma olettaa, että käynnistyshakemistossa on konfiguraatiotiedosto *config.properties*, joka määrittelee sen tiedoston nimen, johon käyttäjien tiedot tallennetaan.
-Tiedoston muoto on seuraava:
+Tiedoston sisältämä määrittely on tehty seuraavalla tavalla:
 
 > userFile=users.txt
 
 ## Ohjelman käynnistäminen
 
-Ohjelma käynnistetään komennolla:
+Ohjelma käynnistyy komennolla:
 
 > java -jar harjoitusprojekti-1.0-SNAPSHOT.jar
 
@@ -29,8 +29,16 @@ Kirjautumisnäkymässä on myös mahdollisuus luoda uusi käyttäjä kirjoittama
 
 Mikäli samannimistä käyttäjää ei ole olemassa (tarkistus tapahtuu kirjainten koosta riippumatta), voi uudella käyttäjällä kirjautua saman tien sisään peliin.
 
+## Navigointi
+
+Kirjautumisnäkymän jälkeen sovellus avaa päävalikon josta pääsee eteenpäin painamalla haluttua tekstiä. Myös ohjelmasta poistuminen ja uloskirjautuminen onnistuu tästä näkymästä.
+
+![](https://raw.githubusercontent.com/pprepu/ot-harjoitustyo/master/dokumentaatio/kuvat/menuNakyma.PNG)
+
 ## Pelaaminen
 
-Tällä hetkellä pelaaminen tapahtuu painamalla pelialueen alapuolella olevia insert nappeja. Ylhäällä oleva teksti taas kertoo, kenen vuoro tietyllä hetkellä on. Vasemmassa alalaidassa lukee nykyisen kirjautuneen käyttäjän voittojen ja tappoiden määärä.
+Pelaaminen tapahtuu painamalla pelialueen alapuolella olevia insert nappeja. Pelialueen yläpuolella oleva teksti taas kertoo, kenen vuoro tietyllä hetkellä on. Se myös ilmoittaa, mikäli peli päättyy jomman kumman voittoon. Alhaalla lukee nykyisen kirjautuneen käyttäjän voittojen ja tappioiden määärä.
 
-Tätä näkymää kuitenkin hiotaan vielä.
+![](https://raw.githubusercontent.com/pprepu/ot-harjoitustyo/master/dokumentaatio/kuvat/peliNakyma.PNG)
+
+Lisäsi pelin voi aloittaa alusta painamalla Reset -nappia. Palaaminen päävalikkoon onnistuu painamalla BACK -nappia.
