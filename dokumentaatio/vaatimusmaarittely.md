@@ -16,7 +16,7 @@ Sovellus sisältää ainoastaan kaksi käyttäjäroolia, normaalin käyttäjän 
 
 Sovelluksessa on graafinen käyttöliittymä, joka tarjoaa useita näkymiä käyttäjälle.
 
-Sovellus käynnistyy kirjautumisnäkymään, josta onnistunut kirjautuminen siirtää käyttäjän yleismenuun, josta taas pääsee sekä sääntöjen lukemiseen, pelialueelle, tilastojen tarkasteluun sekä takaisin kirjautumisnäkymään kirjautumalla ulos sovelluksesta. Tästä näkymästä sovellus voidaan myös sulkea.
+Sovellus käynnistyy kirjautumisnäkymään, josta onnistunut kirjautuminen siirtää käyttäjän yleismenuun, josta taas pääsee sekä sääntöjen lukemiseen, pelialueelle, tilastojen tarkasteluun että takaisin kirjautumisnäkymään kirjautumalla ulos sovelluksesta. Tästä näkymästä sovellus voidaan myös sulkea.
 
 ## Perusversion tarjoama toiminnallisuus
 
