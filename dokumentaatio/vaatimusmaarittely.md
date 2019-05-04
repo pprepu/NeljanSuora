@@ -4,7 +4,7 @@
 
 Sovellus on versio [connect four/neljän suora](https://fi.wikipedia.org/wiki/Nelj%C3%A4n_suora) lautapelistä, jossa kiekkoja pudotetaan kehikkoon tavoitteena saada neljän peräkkäisen kiekon suora.
 
-Peliin luodaan käyttäjätunnus, jonka perusteella pidetään kirjaa pelatuista peleistä ja niiden tuloksista.
+Peliin luodaan käyttäjätunnus, jonka perusteella pidetään kirjaa pelatuista peleistä ja niiden tuloksista. Käyttäjätunnuksia voi luoda useita ja niiden pelaamia pelejä seurataan tallentamalla käyttäjiä koskevat tiedot omaan tiedostoonsa.
 
 ## Käyttäjät
 
