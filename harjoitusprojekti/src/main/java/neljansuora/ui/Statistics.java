@@ -79,11 +79,11 @@ public class Statistics {
         CategoryAxis xAxisTop = new CategoryAxis();
         NumberAxis yAxisTop = new NumberAxis();
         
+        // tickunit and upperbound are defined later
         xAxisTop.setLabel("Name");
         yAxisTop.setLabel("Number of wins");
         yAxisTop.setAutoRanging(false);
         yAxisTop.setLowerBound(0);
-        yAxisTop.setTickUnit(2);
                 
         BarChart<String, Number> barChartTopWinners = new BarChart<>(xAxisTop, yAxisTop);
         
@@ -103,8 +103,14 @@ public class Statistics {
         
         barChartTopWinners.getData().add(topWinners);
         
-        // finally, customize upperbound of y-axis with current top-winner's number of wins
-        yAxisTop.setUpperBound(allUsersSortedByWins.get(0).getWins());
+
+        // to ensure a nice, good looking graph, both upperbound and tickunit are set to be scaled by top winner's total wins
+        
+        int currentTickUnit = Math.max(1, allUsersSortedByWins.get(0).getWins() / 10);
+
+        yAxisTop.setTickUnit(currentTickUnit);
+        
+        yAxisTop.setUpperBound(currentTickUnit * 11);
         
         // buttons for changing stats-view
         final ToggleGroup viewOptions = new ToggleGroup();
@@ -147,7 +153,7 @@ public class Statistics {
             window.setScene(this.prevScene);
         });
         
-        // add components in main layout
+        // add components to main layout
         mainLayout.setCenter(barChartUser);
         mainLayout.setRight(buttons);
         mainLayout.setBottom(backButton);

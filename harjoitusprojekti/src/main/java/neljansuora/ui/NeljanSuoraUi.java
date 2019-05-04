@@ -28,7 +28,7 @@ public class NeljanSuoraUi extends Application {
     
     /**
      * Initializes the programme and creates Usercontrol and FileUserDao instances used throughout the programme.
-     * @throws Exception 
+     * @throws Exception Exception is realized when the file FileUserDao tries to read from does not exist.
      */
     @Override
     public void init() throws Exception {
@@ -48,10 +48,9 @@ public class NeljanSuoraUi extends Application {
     /**
      * Starts the graphical ui and opens the login-view.
      * @param   window  Stage variable for the JavaFX ui.
-     * @throws Exception 
      */
     @Override
-    public void start(Stage window) throws Exception {
+    public void start(Stage window) {
         
         Login login = new Login(this.userControl, this.fileUserDao);
         login.display(window);
