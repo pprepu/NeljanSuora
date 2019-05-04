@@ -1,17 +1,9 @@
 
 package neljansuora.controller;
-import java.io.File;
-import java.io.PrintWriter;
 import neljansuora.domain.User;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Scanner;
-import neljansuora.dao.UserDao;
 
 /**
- * Controls actions related to the logged in User, such as adding losses and wins to it. 
+ * Controls actions related to the logged in Users (main user and player 2 for the game), such as adding losses and wins to them. 
  * Also takes care of the logging in/out itself.
  */
 public class Usercontrol {
@@ -19,7 +11,9 @@ public class Usercontrol {
     private User currentUser;
     private User player2;
     
-    
+    /**
+     * Constructor - sets currentUser and player2 when created.
+     */
     public Usercontrol() {
         this.currentUser = null;
         this.player2 = null;
@@ -28,7 +22,7 @@ public class Usercontrol {
     /**
     * Logging in.
     * 
-    * @param   user   The user thas is being logged in/added.
+    * @param   user   The main user who is being logged in/added.
     * 
     */
     public void logIn(User user) {
@@ -50,6 +44,10 @@ public class Usercontrol {
         return this.currentUser;
     }
     
+    /**
+     * Practically represents a login function for player 2.
+     * @param   user    User for player 2. 
+     */
     public void setPlayer2(User user) {
         this.player2 = user;
     }
@@ -58,25 +56,28 @@ public class Usercontrol {
         return this.player2;
     }
     /**
-    * Adds a win to logged in User.
+    * Adds a win to logged in main User.
     */
     public void win() {
         getCurrentUser().addWin();
     }
     /**
-    * Adds loss to logged in User.
+    * Adds loss to logged in main User.
     */
     public void lose() {
         getCurrentUser().addLoss();
     }
-    
+    /**
+    * Adds a win to logged in player 2.
+    */
     public void p2Win() {
         getPlayer2().addWin();
     }
-    
+    /**
+    * Adds a loss to logged in player 2.
+    */
     public void p2Lose() {
         getPlayer2().addLoss();
     }
     
-
 }

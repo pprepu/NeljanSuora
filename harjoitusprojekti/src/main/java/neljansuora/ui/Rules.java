@@ -15,19 +15,31 @@ import neljansuora.dao.FileUserDao;
 import static neljansuora.ui.NeljanSuoraUi.HEIGHT;
 import static neljansuora.ui.NeljanSuoraUi.WIDTH;
 
-
+/**
+ * Represents the rules view.
+ */
 public class Rules {
     
     private Usercontrol userControl;
     private FileUserDao fileUserDao;
     private Scene prevScene;
     
+    /**
+     * Constructor
+     * @param   userControl Usercontrol which was created at the start of the game.
+     * @param   fileUserDao FileUserDao which was created at the start of the game.
+     * @param   prevScene   The scene where the user arrived from.
+     */
     public Rules(Usercontrol userControl, FileUserDao fileUserDao, Scene prevScene) {
         this.userControl = userControl;
         this.fileUserDao = fileUserDao;
         this.prevScene = prevScene;
     }
     
+    /**
+     * Displays the rules -page.
+     * @param   window  Stage shown to user.
+     */
     public void display(Stage window) {
         
         // create main layout
@@ -61,6 +73,8 @@ public class Rules {
         // add components to layout
         layout.getChildren().addAll(header, rules1, rules2, rules3, rules4, backButton);
         
+        
+        // create scene and add it to stage
         Scene rulesScene = new Scene(layout);
         
         window.setScene(rulesScene);

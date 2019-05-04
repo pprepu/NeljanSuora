@@ -5,11 +5,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import neljansuora.domain.User;
 import java.util.HashMap;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Scanner;
-import neljansuora.dao.UserDao;
 
 /**
   * This class handles services related to users in the db.
@@ -19,7 +16,10 @@ public class FileUserDao implements UserDao {
     private HashMap<String, User> users;
     private String filename;
     
-    
+    /**
+     * Constructor.
+     * @param   filename    Name of the file used. Currently NeljanSuoraUi -class fetches it from config.properties when it creates the FileUserDao used throughout the programme. 
+     */
     public FileUserDao(String filename) {
         this.users = new HashMap<>();
         this.filename = filename;
@@ -50,7 +50,7 @@ public class FileUserDao implements UserDao {
     *
     * @param   username   Name of the new user
     * @param   wins    Number of wins
-    * @param   losses  Numbef of losses
+    * @param   losses  Number of losses
     * 
     * @return True, if a new User is actually added, false if the user already exists.
     */
@@ -155,15 +155,23 @@ public class FileUserDao implements UserDao {
         return this.users.get(modifyName(name));
     }
     
-    private String modifyName(String name) {
+    /**
+     * Formats the usernames. Formatting is done so all usernames are handled case insensitively.
+     * @param   name    Username
+     * @return Username transformed into a uniform format.
+     */
+    public String modifyName(String name) {
         return name.trim().toUpperCase();
     }
     
+    /**
+     * Gets all users in FileUserDao.
+     * @return All current users in FileUserDao in a collection.
+     */
     @Override
     public Collection<User> getUsers() {
         return this.users.values();
     }
-    
     
     /**
     * Adds an user with updated variables over an existing user (if it has been added/it exists).

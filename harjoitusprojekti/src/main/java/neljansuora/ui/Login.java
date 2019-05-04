@@ -20,17 +20,28 @@ import neljansuora.domain.User;
 import static neljansuora.ui.NeljanSuoraUi.HEIGHT;
 import static neljansuora.ui.NeljanSuoraUi.WIDTH;
 
-
+/**
+ * Represents the login view.
+ */
 public class Login {
     
     private Usercontrol userControl;
     private FileUserDao fileUserDao;
     
+    /**
+     * Constructor
+     * @param   userControl Usercontrol which was created at the start of the game.
+     * @param   fileUserDao FileUserDao which was created at the start of the game.
+     */
     public Login(Usercontrol userControl, FileUserDao fileUserDao) {
         this.userControl = userControl;
         this.fileUserDao = fileUserDao;
     }
     
+    /**
+     * Displays the login-page.
+     * @param window    Stage shown to user.
+     */
     public void display(Stage window) {
         
         //create the main layout
@@ -131,8 +142,7 @@ public class Login {
             }
         });
         
-        
-        
+        // create scene and add it to stage
         Scene mainView = new Scene(mainLayout);
         
         window.setScene(mainView);

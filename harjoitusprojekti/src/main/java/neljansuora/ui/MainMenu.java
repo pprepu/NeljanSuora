@@ -1,48 +1,42 @@
 
 package neljansuora.ui;
 
-import java.io.FileInputStream;
-import neljansuora.controller.Gamecontrol;
-import neljansuora.domain.User;
-import neljansuora.ui.NeljanSuoraUi;
+
 import neljansuora.controller.Usercontrol;
 import neljansuora.dao.FileUserDao;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Properties;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Box;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import static neljansuora.ui.NeljanSuoraUi.HEIGHT;
 import static neljansuora.ui.NeljanSuoraUi.WIDTH;
 
+/**
+ * Represents the main menu view.
+ */
 public class MainMenu {
     
     private Usercontrol userControl;
     private FileUserDao fileUserDao;
-    
+    /**
+     * Constructor
+     * @param   userControl Usercontrol which was created at the start of the game.
+     * @param   fileUserDao FileUserDao which was created at the start of the game.
+     */
     public MainMenu (Usercontrol userControl, FileUserDao fileUserDao) {
         this.userControl = userControl;
         this.fileUserDao = fileUserDao;
     }
     
+    /**
+     * Displays the main menu -page.
+     * @param   window  Stage shown to user.
+     */
     public void display(Stage window) {
         
         // create main layout
@@ -125,8 +119,6 @@ public class MainMenu {
         window.setScene(menuScene);
         window.setTitle("Neljän suora");
         window.show();
-        
-        
     }
 
 }

@@ -2,12 +2,9 @@
 package neljansuora.ui;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import java.util.stream.Collectors;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -26,18 +23,30 @@ import neljansuora.domain.User;
 import static neljansuora.ui.NeljanSuoraUi.HEIGHT;
 import static neljansuora.ui.NeljanSuoraUi.WIDTH;
 
-
+/**
+ * Represents the statistics view.
+ */
 public class Statistics {
     private Usercontrol userControl;
     private FileUserDao fileUserDao;
     private Scene prevScene;
     
+    /**
+     * Constructor
+     * @param   userControl Usercontrol which was created at the start of the game.
+     * @param   fileUserDao FileUserDao which was created at the start of the game.
+     * @param   prevScene   The scene where the user arrived from.
+     */
     public Statistics(Usercontrol userControl, FileUserDao fileUserDao, Scene prevScene) {
         this.userControl = userControl;
         this.fileUserDao = fileUserDao;
         this.prevScene = prevScene;
     }
     
+    /**
+     * Displays the statistics -page.
+     * @param   window  Stage shown to user.
+     */
     public void display(Stage window) {
         // create main layout
         BorderPane mainLayout = new BorderPane();
@@ -107,7 +116,7 @@ public class Statistics {
         RadioButton topWins = new RadioButton("Most wins");
         topWins.setToggleGroup(viewOptions);
         
-        // ..add functionality
+        // ..add functionality to them
         viewOptions.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
@@ -143,6 +152,7 @@ public class Statistics {
         mainLayout.setRight(buttons);
         mainLayout.setBottom(backButton);
         
+        // create scene and add it to stage
         Scene statsScene = new Scene(mainLayout);
         
         window.setScene(statsScene);

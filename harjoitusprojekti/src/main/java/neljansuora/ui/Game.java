@@ -9,13 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import neljansuora.controller.Gamecontrol;
 import neljansuora.controller.Usercontrol;
@@ -24,7 +22,9 @@ import neljansuora.domain.User;
 import static neljansuora.ui.NeljanSuoraUi.HEIGHT;
 import static neljansuora.ui.NeljanSuoraUi.WIDTH;
 
-
+/**
+ * Represents the game stage and its preliminary view, where player 2 has to log in.
+ */
 public class Game {
     private Usercontrol userControl;
     private FileUserDao fileUserDao;
@@ -35,6 +35,12 @@ public class Game {
     private boolean gameOver;
     private Scene prevScene;
     
+    /**
+     * Constructor
+     * @param   userControl Usercontrol which was created at the start of the game.
+     * @param   fileUserDao FileUserDao which was created at the start of the game.
+     * @param   prevScene   The scene where the user arrived from.
+     */
     public Game(Usercontrol userControl, FileUserDao fileUserDao, Scene prevScene) {
         this.userControl = userControl;
         this.fileUserDao = fileUserDao;
@@ -46,6 +52,10 @@ public class Game {
         this.prevScene = prevScene;
     }
     
+    /**
+     * Displays the stage before the game, where player 2 has to log in.
+     * @param   window  Stage shown to user.
+     */
     public void displayPreGameStage(Stage window) {
         VBox layout = new VBox(30);
         layout.setPrefSize(WIDTH, HEIGHT);
@@ -140,7 +150,6 @@ public class Game {
             }
         });
         
-        
         backButton.setOnAction(event -> {
             window.setScene(this.prevScene);
         });
@@ -150,6 +159,10 @@ public class Game {
         window.show();
     }
     
+    /**
+     * Displays the game page itself.
+     *  @param  window  Stage shown to user.
+     */
     public void display(Stage window) {
         
         // create main-layout for the game
@@ -185,6 +198,10 @@ public class Game {
         window.show();
     }
     
+    /**
+     * Creates and returns the game page.
+     *  @return     Returns gameboard resetted and empty + all the other elements in the game page.
+     */
     public Parent getGamePage() {
         
         // create layout
@@ -285,6 +302,12 @@ public class Game {
         return layout;
     }
     
+    /**
+     * Adds a text to the gameboard which gamecontroller users to define whether a game is over or not.
+     * Furthermore, changes the colors of the played tiles to represent discs in the real version of the game.
+     * @param   posCol  Column in the gameboard that is being played.
+     * @param   posRow  Row in the gameboard that is being played.
+     */
     public void playTile(int posCol, int posRow) {
         this.gameArea[posCol][posRow].setText(this.playerTurn);
         if (this.playerTurn.equals("X")) {

@@ -1,44 +1,35 @@
 package neljansuora.ui;
 
 import java.io.FileInputStream;
-import neljansuora.controller.Gamecontrol;
-import neljansuora.domain.User;
 import neljansuora.controller.Usercontrol;
 import neljansuora.dao.FileUserDao;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Properties;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
+
 
 /**
-  * Handles all the UI-related aspects of the program.
+  * Handles events related to starting and ending the programme. 
+  * Most important task is to load current users from a file to FileUserDao
   */
 public class NeljanSuoraUi extends Application {
     
     private Usercontrol userControl;
     private FileUserDao fileUserDao;
     
+    /**
+     * A Global variable used in all Ui classes to maintain regular layouts
+     */
     public static int WIDTH = 550;
+    /**
+     * A Global variable used in all Ui classes to maintain regular layouts
+     */
     public static int HEIGHT = 550;
     
+    /**
+     * Initializes the programme and creates Usercontrol and FileUserDao instances used throughout the programme.
+     * @throws Exception 
+     */
     @Override
     public void init() throws Exception {
         
@@ -54,6 +45,11 @@ public class NeljanSuoraUi extends Application {
         
     }
     
+    /**
+     * Starts the graphical ui and opens the login-view.
+     * @param   window  Stage variable for the JavaFX ui.
+     * @throws Exception 
+     */
     @Override
     public void start(Stage window) throws Exception {
         
@@ -61,6 +57,9 @@ public class NeljanSuoraUi extends Application {
         login.display(window);
     }
     
+    /**
+     * When the window is closed or user quits, changes are saved to userfile.
+     */
     @Override
     public void stop(){
        this.fileUserDao.saveToFile();

@@ -1,30 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dao;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import neljansuora.controller.Usercontrol;
 import neljansuora.domain.User;
-import neljansuora.controller.Gamecontrol;
 import neljansuora.dao.FileUserDao;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import org.junit.Assert;
 
-/**
- *
- * @author annika
- */
+
 public class FileUserDaoTest {
-    
+
     User defaultUser;
     Usercontrol control;
     FileUserDao fileUserDao;
@@ -137,12 +123,4 @@ public class FileUserDaoTest {
         newFileUserDao.readFromFile();
         assertEquals(newFileUserDao.userCount(), 1);
     }
-    /*
-    @Test(expected = IOException.class)
-    public void throwsException() { // will pass
-        FileUserDao newFileUserDao = new FileUserDao("notAnExistingFile");
-        
-        newFileUserDao.readFromFile();
-    }
-    */
 }
