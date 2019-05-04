@@ -57,7 +57,7 @@ public class NeljanSuoraUi extends Application {
     }
     
     /**
-     * When the window is closed or user quits, changes are saved to userfile.
+     * When the window is closed or user quits, changes are saved to a file.
      */
     @Override
     public void stop(){
