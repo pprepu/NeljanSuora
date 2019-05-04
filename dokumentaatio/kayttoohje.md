@@ -37,7 +37,7 @@ Kirjautumisnäkymän jälkeen sovellus avaa päävalikon josta pääsee eteenpä
 
 ## Pelaaminen
 
-Pelaaminen tapahtuu painamalla pelialueen alapuolella olevia insert nappeja. Pelialueen yläpuolella oleva teksti taas kertoo, kenen vuoro tietyllä hetkellä on. Se myös ilmoittaa, mikäli peli päättyy jomman kumman voittoon. Alhaalla lukee nykyisen kirjautuneen käyttäjän voittojen ja tappioiden määärä.
+Pelaaminen tapahtuu painamalla pelialueen alapuolella olevia insert nappeja. Pelialueen yläpuolella oleva teksti taas kertoo, kenen vuoro tietyllä hetkellä on. Se myös ilmoittaa, mikäli peli päättyy jomman kumman voittoon. Alhaalla lukee molempien kirjautuneiden pelaajien voittojen ja tappioiden määärä.
 
 ![](https://raw.githubusercontent.com/pprepu/ot-harjoitustyo/master/dokumentaatio/kuvat/peliNakyma.PNG)
 
