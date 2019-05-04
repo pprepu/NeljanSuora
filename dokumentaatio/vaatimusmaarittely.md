@@ -34,7 +34,7 @@ Sovellus käynnistyy kirjautumisnäkymään, josta onnistunut kirjautuminen siir
 
 ## Jatkokehitysideoita
 
-Ajan riittäessä perusversiota laajennetaan esim. seuraavilla toiminnallisuksilla:
+Ajan riittäessä perusversiota laajennetaan esim. seuraavilla toiminnallisuuksilla:
 
 * käyttäjätunnuksen ja siihen liittyvän pelihistorian poisto
 * salasanan lisääminen kirjautumiseen
