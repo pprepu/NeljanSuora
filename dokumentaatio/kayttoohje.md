@@ -41,4 +41,4 @@ Pelaaminen tapahtuu painamalla pelialueen alapuolella olevia insert nappeja. Pel
 
 ![](https://raw.githubusercontent.com/pprepu/ot-harjoitustyo/master/dokumentaatio/kuvat/peliNakyma.PNG)
 
-Lisäsi pelin voi aloittaa alusta painamalla Reset -nappia. Palaaminen päävalikkoon onnistuu painamalla BACK -nappia.
+Lisäksi pelin voi aloittaa alusta painamalla Reset -nappia. Palaaminen päävalikkoon onnistuu painamalla BACK -nappia.
