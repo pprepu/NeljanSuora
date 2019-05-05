@@ -40,7 +40,7 @@ public class FileUserDao implements UserDao {
             this.users.put(key, new User(username));
             return true;
         }
-        //käyttäjä on jo olemassa, joten palautetaan false
+        //user already exists, return false
         return false;
     }
     
@@ -61,7 +61,7 @@ public class FileUserDao implements UserDao {
             this.users.put(key, new User(username, wins, losses));
             return true;
         }
-        //käyttäjä on jo olemassa, joten palautetaan false
+        //user already exists, return false
         return false;
     }
     
@@ -74,15 +74,13 @@ public class FileUserDao implements UserDao {
     */
     @Override
     public boolean addUser(User user) {
-        //käyttäjien avaimet lisätään muokatussa muodossa
+        //keys are added in trimmed, case insensitive form
         String key = modifyName(user.getName());
-        //tarkistetaan sisältääkö hajautustaulu jo kyseisen käyttäjän
-        //mikäli ei, lisätään uusi käyttäjä ja palautetaan true
         if (this.users.get(key) == null) {
             this.users.put(key, user);
             return true;
         }
-        //käyttäjä on jo olemassa, joten palautetaan false
+         //user already exists, return false
         return false;
     }
     
