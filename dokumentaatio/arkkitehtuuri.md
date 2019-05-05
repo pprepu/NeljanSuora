@@ -6,9 +6,9 @@ Alla tämänhetkinen applikaation rakenne pakkauksineen:
 
 ![alt alustavaArkkitehtuuri](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/arkkitehtuuriv2.png)
 
-Kuvaa on yksinkertaistettu niin, että yhteydet FileUserDaosta ja Usercontrolista on piirretty yleisesti koko Ui-pakkaukseen ja ne alkuperäisesti luovaan NeljanSuoraUi -luokkaan. Todellisuudessa ne kuitenkin liittyvät jokaiseen kyseisen pakkaukseen luokkaan, mutta viivaviidakon estämiseksi ne on piirretty edellä mainitulla tavalla. Haluan kuitenkin eksplisiittisesti todeta tämän.
+Kuvaa on yksinkertaistettu niin, että yhteydet FileUserDaosta ja Usercontrolista on piirretty yleisesti koko Ui-pakkaukseen ja ne alkuperäisesti luovaan NeljanSuoraUi -luokkaan. Todellisuudessa ne kuitenkin liittyvät jokaiseen kyseisen pakkaukseen luokkaan, mutta viivaviidakon estämiseksi ne on piirretty edellä mainitulla tavalla. Nähdäkseni tämä on oikean kuvan saamiseksi kuitenkin mainittava.
 
-Pakkaus NeljanSuora.ui sisältää JavaFX:llä toteutetun käyttöliittymä, NeljanSuora.dao käyttäjien tietojen pysyväistalletukseen liittyvän koodin, NeljanSuora.domain käyttäjiin viittaavaan User -luokan ja NeljanSuora.controller pääasiallisen sovelluslogiikan kuten kirjautuneeseen käyttäjään liittyvät toiminnot sekä itse pelaamisen toimimisesta huolehtimisen.
+Pakkaus neljansuora.ui sisältää JavaFX:llä toteutetun käyttöliittymän, neljansuora.dao käyttäjien tietojen pysyväistalletukseen liittyvän koodin, neljansuora.domain käyttäjiin viittaavaan User -luokan ja neljansuora.controller pääasiallisen sovelluslogiikan kuten kirjautuneeseen käyttäjään liittyvät toiminnot sekä itse pelaamisen toimimisesta huolehtimisen.
 
 ## Käyttöliittymä
 
