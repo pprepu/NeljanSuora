@@ -19,15 +19,15 @@ Käyttöliittymä sisältää tällä hetkellä monta erillistä näkymää
 * tilastot
 * peli
 
-Sovellusta käynnistettäessä ensimmäinen ladattava näkymä on login -näkymä, jonka tarjoama Scene-olio ladataan sovellusta käynnistettäessä NeljanSuoraUi -luookassa määriteltyyn Stage -olioon. Myös muut näkymät toimivat samalla logiikalla eli ne on eristetty omiksi luokiksiin, jotka liittävät oman layouttinsa sisältävän Scene -olion samaan sovelluksen käyttäjälle näkyvään Stage-olioon.
+Sovellusta käynnistettäessä ensimmäinen ladattava näkymä on login -näkymä, jonka tarjoama Scene-olio ladataan sovellusta käynnistettäessä NeljanSuoraUi -luokassa määriteltyyn Stage -olioon. Myös muut näkymät toimivat samalla logiikalla eli ne on eristetty omiksi luokiksi, jotka liittävät oman layouttinsa sisältävän Scene -olion samaan sovelluksen käyttäjälle näkyvään Stage-olioon.
 
-Käyttöliittymä on toteutettu ohjelmallisesti paketin neljansuora.ui luokissa NeljansuoraUi, Login, MainMenu, Rules, Statistics ja Game.
+Käyttöliittymä on toteutettu ohjelmallisesti pakkauksen neljansuora.ui luokissa NeljansuoraUi, Login, MainMenu, Rules, Statistics ja Game.
 
 Game -näkymä sisältää itse pelaamisen lisäksi kirjautumisnäkymän, jossa kaksinpelin toinen osapuoli kirjautuu sisään.
 
 Käyttäjä on eriytetty sovelluslogiikasta niin, että käyttäjien toiminnoista huolehtii FileUserDao, joka sekä lataa että tallentaa niihin liittyvän tiedon ja Usercontrol, joka pitää huolta kirjautuneesta käyttäjästä. Vastaavasti Gamecontrollin vastuulla on pelin toiminta sääntöjen puitteissa.
 
-Kuitenkin Game -luokan ja Gamecontrollerin yhteistyö on varsin läheistä. Gamecontroller suorittaa määrittelynsä käyttämällä Game -luokassa määriteltyä pelialustaa, joka pelaamisen myötä muokkautuu (pelialueen täyttyessä) saman luokan playTile metodin avulla.
+Kuitenkin Game -luokan ja Gamecontrollerin yhteistyö on varsin läheistä. Gamecontroller suorittaa määrittelynsä käyttämällä Game -luokassa määriteltyä pelialustaa, joka pelaamisen myötä muokkautuu (pelialueen täyttyessä) saman (Game) luokan playTile metodin avulla.
 
 ## Sovelluslogiikka
 
