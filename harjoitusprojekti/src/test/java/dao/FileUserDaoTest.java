@@ -132,4 +132,10 @@ public class FileUserDaoTest {
         newFileUserDao.readFromFile();
         assertEquals(newFileUserDao.userCount(), 1);
     }
+    
+    @Test
+    public void modifyNameModifiesKeysProperly() {
+        fileUserDao.addUser("  peTTerI    ");
+        assertEquals(true, fileUserDao.userExists("petteri"));
+    }
 }

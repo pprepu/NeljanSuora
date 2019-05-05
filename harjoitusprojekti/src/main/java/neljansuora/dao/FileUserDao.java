@@ -154,7 +154,7 @@ public class FileUserDao implements UserDao {
     }
     
     /**
-     * Formats the usernames. Formatting is done so all usernames are handled case insensitively.
+     * Formats the usernames. Formatting is done so all usernames are handled case insensitively and without spaces.
      * @param   name    Username
      * @return Username transformed into a uniform format.
      */
