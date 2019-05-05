@@ -11,7 +11,7 @@ Sovelluksella on mahdollista pelata lokaalisti kaksinpelinä [neljän suora](htt
 
 [Arkkitehtuuri](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-[Testausdokumentti](https://github.com/pprepu/NeljanSuora/edit/master/dokumentaatio/testaus.md)
+[Testausdokumentti](https://github.com/pprepu/NeljanSuora/blob/master/dokumentaatio/testaus.md)
 
 [Työaikakirjanpito](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
