@@ -23,6 +23,7 @@ Sovellus käynnistyy kirjautumisnäkymään, josta onnistunut kirjautuminen siir
 ### Ennen kirjautumista
 
 * käyttäjätunnuksen luominen
+  * käyttäjätunnus voi sisältää erikoismerkkejä ja se voi olla minkä pituinen tahansa, muttei kuitenkaan tyhjä
 * käyttäjä voi kirjautua sovellukseen
 
 ### Kirjautumisen jälkeen
