@@ -31,7 +31,7 @@ Kuitenkin Game -luokan ja Gamecontrollerin yhteistyö on varsin läheistä. Game
 
 ## Sovelluslogiikka
 
-Käyttäjien toimintaan liittyvä keskeinen luokka on User, jota käyttävät pysyväistallennuksessa FileUserDao ja kirjautuneen käyttäjän koordinoinnissa UserControl.
+Käyttäjien toimintaan liittyvä keskeinen luokka on User, jota käyttävät pysyväistallennuksessa FileUserDao ja kirjautuneen käyttäjän koordinoinnissa UserControl. Se toteuttaa Comparable -rajapinnan käyttäjien keskeisen vertailun helpottamiseksi, mitä tarvitaan tilastonäkymässä käytettävän datan järjestämisessä.
 
 ![alt User](https://github.com/pprepu/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/user.png)
 
