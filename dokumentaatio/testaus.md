@@ -39,4 +39,4 @@ Sovellusta on testattu paitsi tilanteissa, joissa käyttäjät sisältävä tied
 
 ## Sovellukseen jääneet ongelmat
 
-Sovelluksen virheilmoitukset eivät ole järkeviä, kun FileUserDao ei pysty käsittelemään haluamiaan tiedostoja.
+Sovelluksen virheilmoitukset eivät ole järkeviä, kun FileUserDao ei pysty käsittelemään sen kohdetiedostoja.
