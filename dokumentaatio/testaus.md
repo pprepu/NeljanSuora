@@ -16,7 +16,7 @@ Keskeinen huomio testien muodostamisessa on se, että Gamecontrolliin kohdistunu
 
 ### Testikattavuus
 
-Käyttöliittymäkerrosta lukuunottamatta (ja edellä esitetyt huomiot controller-pakkauksen Gamecontroller sekä FakeGamecontroller -luokista huomioiden) sovelluksen testien rivikattavuus on 98% ja haarautumakattavuus 100%.
+Käyttöliittymäkerrosta lukuunottamatta (ja edellä esitetyt huomiot controller-pakkauksen Gamecontroller sekä FakeGamecontroller -luokista huomioiden) sovelluksen testien rivikattavuus on 99% ja haarautumakattavuus 100%.
 
 ![](https://github.com/pprepu/NeljanSuora/blob/master/dokumentaatio/kuvat/testikattavuus.PNG)
 
