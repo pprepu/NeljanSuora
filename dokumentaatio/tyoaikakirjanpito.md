@@ -26,5 +26,7 @@ päivä | aika | mitä tein
 4.5 | 3 | Uusien testien luominen ja parantaminen, FakeGamecontrol-luokan luominen testausta varten
 4.5 | 1 | Ui-näkymien parantamista, mm. tilastoihin liittyvät diagrammit
 4.5 | 5 | Dokumentaation parantaminen, javadocin viimeistely
-yht | 60|
+5.5 | 1 | Manuaalista testausta, uuden testin luominen ja testiluokkien mielekkyyden tarkastaminen
+5.5 | 1 | Dokumentaation hiomista
+yht | 62|
 
